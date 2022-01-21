@@ -14,7 +14,7 @@ It includes:
 - All files (Project File, Images)
 - Link to the [**Report Page for Meetings**](#meeting-report-page)
 - Documentation
-- [Change Logs](#change-logs)
+- [**Change Logs**](#change-logs)
 
 ## Meeting Report Page
 

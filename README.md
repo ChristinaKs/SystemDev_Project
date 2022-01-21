@@ -8,19 +8,11 @@ It includes:
 - Documentation
 - [Change Logs](#change-logs)
 
-## Table of Contents
+## [Meeting Reports](MinutesReport.md)
 
-- [System Development Project](#system-development-project)
-  - [Table of Contents](#table-of-contents)
-    - [Meeting Reports](#meeting-reports)
-    - [Change Logs](#change-logs)
-    - [Authors](#authors)
+## [Change Logs](ChangeLogs.md)
 
-### [Meeting Reports](MinutesReport.md)
-
-### [Change Logs](ChangeLogs.md)
-
-### Authors
+## Authors
 
 - [Andy-Tason Nguyen-Chao](https://github.com/DHay10)
 - [Christina Kallas](https://github.com/ChristinaKs)

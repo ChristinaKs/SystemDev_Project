@@ -1,6 +1,9 @@
 # System Development Project
 
+## Table of Contents
+
 - [System Development Project](#system-development-project)
+  - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Meeting Report Page](#meeting-report-page)
   - [Change Logs](#change-logs)

@@ -16,7 +16,7 @@ It includes:
     - [Change Logs](#change-logs)
     - [Authors](#authors)
 
-### [Meeting Reports](Minutes_OrangeTeam.md)
+### [Meeting Reports](MinutesReport.md)
 
 ### [Change Logs](ChangeLogs.md)
 

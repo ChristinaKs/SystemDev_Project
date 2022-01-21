@@ -1,16 +1,5 @@
 # System Development Project
 
-## Table of Contents
-
-- [System Development Project](#system-development-project)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-  - [Meeting Report Page](#meeting-report-page)
-  - [Change Logs](#change-logs)
-  - [Authors](#authors)
-
-## Description
-
 This is the repository for the group project for System Development W22
 It includes:
 
@@ -18,6 +7,14 @@ It includes:
 - Link to the [**Report Page for Meetings**](#meeting-report-page)
 - Documentation
 - [**Change Logs**](#change-logs)
+
+## Table of Contents
+
+- [System Development Project](#system-development-project)
+  - [Table of Contents](#table-of-contents)
+  - [Meeting Report Page](#meeting-report-page)
+  - [Change Logs](#change-logs)
+  - [Authors](#authors)
 
 ## Meeting Report Page
 

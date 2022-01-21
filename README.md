@@ -12,15 +12,15 @@ It includes:
 
 - [System Development Project](#system-development-project)
   - [Table of Contents](#table-of-contents)
-  - [Meeting Reports](#meeting-reports)
-  - [Change Logs](#change-logs)
-  - [Authors](#authors)
+    - [Meeting Reports](#meeting-reports)
+    - [Change Logs](#change-logs)
+    - [Authors](#authors)
 
-## [Meeting Reports](Minutes_OrangeTeam.md)
+### [Meeting Reports](Minutes_OrangeTeam.md)
 
-## [Change Logs](ChangeLogs.md)
+### [Change Logs](ChangeLogs.md)
 
-## Authors
+### Authors
 
 - [Andy-Tason Nguyen-Chao](https://github.com/DHay10)
 - [Christina Kallas](https://github.com/ChristinaKs)

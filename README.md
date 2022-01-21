@@ -1,28 +1,24 @@
 # System Development Project
 
-This is the repository for the group project for System Development W22
+This is the repository for the group project of **Orange Team** for System Development W22
 It includes:
 
 - All files (Project File, Images)
-- Link to the [**Report Page for Meetings**](#meeting-report-page)
+- Link to the [Report Page for Meetings](#meeting-report-page)
 - Documentation
-- [**Change Logs**](#change-logs)
+- [Change Logs](#change-logs)
 
 ## Table of Contents
 
 - [System Development Project](#system-development-project)
   - [Table of Contents](#table-of-contents)
-  - [Meeting Report Page](#meeting-report-page)
+  - [Meeting Reports](#meeting-reports)
   - [Change Logs](#change-logs)
   - [Authors](#authors)
 
-## Meeting Report Page
+## [Meeting Reports](Minutes_OrangeTeam.md)
 
-- ;
-
-## Change Logs
-
-- ;
+## [Change Logs](ChangeLogs.md)
 
 ## Authors
 

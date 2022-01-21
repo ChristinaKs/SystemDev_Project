@@ -2,14 +2,25 @@
 
 - [System Development Project](#system-development-project)
   - [Description](#description)
+  - [Meeting Report Page](#meeting-report-page)
+  - [Change Logs](#change-logs)
   - [Authors](#authors)
 
 ## Description
 
 This is the repository for the group project for System Development W22
 It includes:
-- All files
-- Link to Sub
+
+- All files (Project File, Images)
+- Link to the [**Report Page for Meetings**](#meeting-report-page)
+- Documentation
+- [Change Logs](#change-logs)
+
+## Meeting Report Page
+
+## Change Logs
+
+- ;
 
 ## Authors
 

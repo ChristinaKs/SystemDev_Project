@@ -17,5 +17,5 @@ It includes:
 - [Andy-Tason Nguyen-Chao](https://github.com/DHay10)
 - [Christina Kallas](https://github.com/ChristinaKs)
 - [Kerian Loerick-Roger](https://github.com/kerian15)
-- Krikour Astour
+- [Krikour Astour](https://github.com/KrikorAstour)
 - [Veaceslav Vlas](https://github.com/vlasslavic)

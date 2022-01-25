@@ -15,8 +15,8 @@
 | Technologies used | Finished | 4 minutes |
 | Meetings Times | Finished | 3 minutes |
 | Thinking of a client to cater to | Finished | 17 minutes |
-| What's next? | Finished | 6 minutes |
-| Tentative schedule for next meeting | Finished |
+| What's next? | Finished | 5 minutes |
+| Tentative schedule for next meeting | Finished | 1 minute |
 
 ## Decisions
 
@@ -51,7 +51,7 @@
     3. Begin researching our customers
     4. Settle in more detail what *type* of service we want to offer
     5. Create templates for our clients
-    6. Creae first contact with our potential clients
+    6. Create first contact with our potential clients
 
 ## What's next?
 
@@ -60,3 +60,56 @@
 - Establish contact with the clients we are interested in
 - Get consent from at least one client to provide a service for them
 - Find a different proposal (non web-page) to cater to our clients needs if necessary
+
+
+
+# **Monday, 25th of January, 2022**
+
+## *Second Meeting*
+
+> Started at 10:38 // Finished at 11:08
+
+## Task / Activity
+| Task | Status | Time |
+| --- | ----------- | -------- |
+| Recap of last meeting | Finished | 2 minutes |
+| Finishing up the contact template | Completed | 1 minutes |
+| Settling in details what project/service we want to offer | Finished | 10 minutes |
+| Discussing what to do before the next meeting | Finished | 5 minutes |
+| What's next? | Finished | 30 seconds |
+| Tentative schedule for next meeting | Completed | 4 minutes |
+| *post-meeting* Discussing templates for certain app ideas | Completed | 10 minutes |
+
+## Decisions
+* Services we can/would like to offer:
+  * Website
+  * Program to sort/track inventory
+  * System to schedule appointments with their customers 
+  * Finance report calculator system
+    - Calculates how much is spent, lost, gained
+    - Compares income to last month/year
+    - Algorithm to *estimate* future sales
+
+* Target Etsy shops for clients (Montreal Etsy sellers)
+
+* What to do before next meeting: 
+  * Translate the email template
+  * Create a rough-draft sketch of each service we'd offer
+  * Everyone finds one or two customers to contact 
+
+* Tentative Schedule for next meeting
+  1. Recap from the previous meeting
+  2. Select clients from the ones everyone will research
+  3. Create templates for our clients
+  4. Create first contact with our potential clients
+    
+
+## Events
+* Raffining the already written rough draft of the email we will use to contact our clients
+* Splitting work 
+* Finding Templates
+
+
+## What's next?
+- Actually contacting customers
+

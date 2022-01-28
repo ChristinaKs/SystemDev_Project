@@ -77,7 +77,7 @@
 | Settling in details what project/service we want to offer | Finished | 10 minutes |
 | Discussing what to do before the next meeting | Finished | 5 minutes |
 | What's next? | Finished | 30 seconds |
-| Tentative schedule for next meeting | Completed | 4 minutes |
+| Tentative schedule for next meeting | Completed | 2 minutes |
 | *post-meeting* Discussing templates for certain app ideas | Completed | 10 minutes |
 
 ## Decisions
@@ -113,3 +113,42 @@
 ## What's next?
 - Actually contacting customers
 
+
+
+# **Friday, 28th of January, 2022**
+
+## *Third Meeting*
+
+> Started at 11:00 // Finished at 11:22
+
+## Task / Activity
+
+| Task | Status | Time |
+| --- | ----------- | -------- |
+| Present and pick clients | Finished | 16 minutes |
+| How to contact | Finished | 4 minutes |
+| What's next? | Finished | 2 minute |
+
+
+## Decisions
+* From each pair of two companies, we will contact one and keep the other as a backup
+* Contact through email, if no email, through Etsy
+
+
+## Events
+
+* Updated the minutes file
+* Contacted multiple possible Clients
+  * WoodProjectsAwait (Etsy Seller) - Veaceslav's pick
+  * IoRoma (Etsy Seller) - Christina's pick
+  * OnlyPortrait (Etsy Seller) - Kerian's pick
+  * Leen_Touch (Instagram) - Krikor's pick
+  * Virus Électronique & Informatique - Andy's pick
+
+
+## What's next?
+- Settle on a client who wants to work with us
+- Start setting up meetings with our client
+- Discuss what our client wants
+- Prepare a list of questions to ask our client
+- Begin discussing the coding portion of our project

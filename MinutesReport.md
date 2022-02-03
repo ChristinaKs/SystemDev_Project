@@ -4,6 +4,8 @@
 
 > Started at 10:30 // Finished at 11:15
 
+<br>
+
 ## Task / Activity
 
 | Task | Status | Time |
@@ -17,6 +19,8 @@
 | Thinking of a client to cater to | Finished | 17 minutes |
 | What's next? | Finished | 5 minutes |
 | Tentative schedule for next meeting | Finished | 1 minute |
+
+<br>
 
 ## Decisions
 
@@ -33,6 +37,8 @@
 * Meetings schedule:
   * Fridays -- 12:00 to 12:45 (mandatory)
   * Wednesdays -- 12:00 to 12:45 (if deemed necessary)
+
+<br>
 
 ## Events
 
@@ -53,6 +59,8 @@
     5. Create templates for our clients
     6. Create first contact with our potential clients
 
+<br>
+
 ## What's next?
 
 - Research our clients
@@ -61,13 +69,15 @@
 - Get consent from at least one client to provide a service for them
 - Find a different proposal (non web-page) to cater to our clients needs if necessary
 
-
+<br> <br>
 
 # **Monday, 25th of January, 2022**
 
 ## *Second Meeting*
 
 > Started at 10:38 // Finished at 11:08
+
+<br>
 
 ## Task / Activity
 | Task | Status | Time |
@@ -79,6 +89,8 @@
 | What's next? | Finished | 30 seconds |
 | Tentative schedule for next meeting | Completed | 2 minutes |
 | *post-meeting* Discussing templates for certain app ideas | Completed | 10 minutes |
+
+<br>
 
 ## Decisions
 * Services we can/would like to offer:
@@ -104,22 +116,28 @@
   4. Create first contact with our potential clients
     
 
+<br>
+
 ## Events
 * Raffining the already written rough draft of the email we will use to contact our clients
 * Splitting work 
 * Finding Templates
 
+<br>
+
 
 ## What's next?
 - Actually contacting customers
 
-
+<br><br>
 
 # **Friday, 28th of January, 2022**
 
 ## *Third Meeting*
 
 > Started at 11:00 // Finished at 11:22
+
+<br>
 
 ## Task / Activity
 
@@ -129,10 +147,14 @@
 | How to contact | Finished | 4 minutes |
 | What's next? | Finished | 2 minute |
 
+<br>
+
 
 ## Decisions
 * From each pair of two companies, we will contact one and keep the other as a backup
 * Contact through email, if no email, through Etsy
+
+<br>
 
 
 ## Events
@@ -145,6 +167,8 @@
   * Leen_Touch (Instagram) - Krikor's pick
   * Virus Électronique & Informatique - Andy's pick
 
+<br>
+
 
 ## What's next?
 - Settle on a client who wants to work with us
@@ -152,3 +176,37 @@
 - Discuss what our client wants
 - Prepare a list of questions to ask our client
 - Begin discussing the coding portion of our project
+
+<br><br>
+
+# **Thursday, 3rd of February, 2022**
+
+## *Fourth Meeting*
+
+> Started at 12:20 // Finished at 12:30
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Discuss Contact Responses | Finished | 3 minutes |
+| Discuss Final Client Choices for tomorrow | Finished | 2 minutes |
+| Discuss what these clients want | Completed | 5 minutes |
+<br>
+
+## Decisions
+* 5 clients did not respond, 2 said no, 2 were not contacted, one will respond with a yes or no by tomorrow -- If no, Christina will be our client
+* They want a website, in more detail after meeting
+* Contact the "maybe" client by tomorrow
+
+<br>
+
+## Events
+* Updated the minutes file
+
+<br>
+
+## What's next?
+We are waiting on the maybe client 

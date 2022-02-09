@@ -6,6 +6,15 @@
 
 <br>
 
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Nguyen-Chao, Andy-Tason<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
 ## Task / Activity
 
 | Task | Status | Time |
@@ -79,6 +88,15 @@
 
 <br>
 
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Nguyen-Chao, Andy-Tason<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
 ## Task / Activity
 | Task | Status | Time |
 | --- | ----------- | -------- |
@@ -139,6 +157,15 @@
 
 <br>
 
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Nguyen-Chao, Andy-Tason<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
 ## Task / Activity
 
 | Task | Status | Time |
@@ -184,6 +211,15 @@
 ## *Fourth Meeting*
 
 > Started at 12:20 // Finished at 12:30
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Nguyen-Chao, Andy-Tason<br>
+&emsp;Vlas, Veaceslav<br>
 
 <br>
 

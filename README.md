@@ -12,6 +12,8 @@ It includes:
 
 ## [Change Logs](ChangeLogs.md)
 
+## [Deliverables](Deliverables.md)
+
 ## Authors
 
 - [Andy-Tason Nguyen-Chao](https://github.com/DHay10)

@@ -8,11 +8,13 @@ It includes:
 - Documentation
 - [Change Logs](#change-logs)
 
+## [Team Logbook](/Team_Logbook)
+
 ## [Meeting Reports](MinutesReport.md)
 
 ## [Change Logs](ChangeLogs.md)
 
-## [Deliverables](Deliverables.md)
+## [Deliverables](/Deliverables)
 
 ## Authors
 

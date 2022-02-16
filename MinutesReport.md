@@ -204,6 +204,7 @@
 - Prepare a list of questions to ask our client
 - Begin discussing the coding portion of our project
 
+
 <br><br>
 
 # **Thursday, 3rd of February, 2022**
@@ -246,3 +247,54 @@
 
 ## What's next?
 We are waiting on the maybe client 
+
+<br><br>
+
+# **Wednesday, 16th of February, 2022**
+
+## *Fifth Meeting*
+
+> Started at 12:35 // Finished at 12:52 <br> *Please note that the reason we have not had meetings as per schedule is that all of our communications through teams and deliverables were enough to keep us on track without having meetings. Meetings shall resume again*
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Going over today's agenda | Finished | 1 minutes |
+| Meeting with our client | Finished |  12 minutes |
+| Recap on client meeting | Completed | 1 minute |
+| Confirm task delegation for Deliverable 02 | Completed | 2 minutes |
+| What is next? | Completed | 1 minutes |
+<br>
+
+## Decisions
+* Deliverable 02 Breakdown:
+  * Veaceslav & Krikor:
+    * Any and all research on client's business field and industry
+    * References
+  * Andy
+    * Front Matter
+    * Final review
+  * Christina 
+    * Final review
+  * Kerian & Christina
+    * Complete report on customer's business 
+
+<br>
+
+## Events
+* Meeting with the client
+
+<br>
+
+## What's next?
+* Working on the Deliverable until Friday

@@ -298,3 +298,48 @@ We are waiting on the maybe client
 
 ## What's next?
 * Working on the Deliverable until Friday
+<br><br>
+
+# **Wednesday, 23rd of February, 2022**
+
+## *Sixth Meeting*
+
+> Started at 12:45 // Finished at 12:55 <br> *Meeting was short and unofficial, not a regularly scheduled meeting*
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Going over the third deliverable and splitting the work | Finished | 10 minutes |
+
+<br>
+
+## Decisions
+* Deliverable 03 Breakdown:
+  * 2 days to do UML
+  * 2 days for the FLow Chart
+  * 3 days for the Use Case information charts
+  * 2 days to finish the actual deliverable document
+
+<br>
+
+## Events
+N/A
+
+<br>
+
+## What's next?
+* Working on the Deliverable until it's due date
+
+<br><br>
+

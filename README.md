@@ -7,6 +7,9 @@ It includes:
 - Link to the [Report Page for Meetings](#meeting-report-page)
 - Documentation
 
+## [Project Instructions](ProjectInstructions.pdf)
+This file contains the guidelines and requirements for every deliverable, presentation and final product pertaining to this project.
+
 ## [Team Logbook](/Team_Logbook)
 This folder containes files that are uploaded, as a team, describing who completed what task, on which day. It is formed as mostly lists to sort out the work that has previously been done.
 

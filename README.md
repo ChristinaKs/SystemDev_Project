@@ -6,15 +6,12 @@ It includes:
 - All files (Project File, Images)
 - Link to the [Report Page for Meetings](#meeting-report-page)
 - Documentation
-- [Change Logs](#change-logs)
 
 ## [Team Logbook](/Team_Logbook)
 This folder containes files that are uploaded, as a team, describing who completed what task, on which day. It is formed as mostly lists to sort out the work that has previously been done.
 
 ## [Meeting Reports](MinutesReport.md)
 This file is one that is updated after every team meeting. It contains the date, time and duration of each meeting, as well as the agenda, the decisions made, work done and other important information pertaining to the meetings. 
-
-## [Change Logs](ChangeLogs.md)
 
 ## [Deliverables](/Deliverables)
 This folder contains the files and folders that are required every couple of weeks from our teacher.

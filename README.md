@@ -7,7 +7,7 @@ It includes:
 - Link to the [Report Page for Meetings](#meeting-report-page)
 - Documentation
 
-## [Project Instructions](ProjectInstructions.pdf)
+## [Project Instructions](Project_Instructions.pdf)
 This file contains the guidelines and requirements for every deliverable, presentation and final product pertaining to this project.
 
 ## [Team Logbook](/Team_Logbook)

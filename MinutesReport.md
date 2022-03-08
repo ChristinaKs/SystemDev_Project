@@ -345,9 +345,9 @@ N/A
 
 # **Tuesday, 08th of March, 2022**
 
-## *Sixth Meeting*
+## *Seventh Meeting*
 
-> Started at 12:45 // Finished at 12:55 <br> *Meeting was short and unofficial, not a regularly scheduled meeting*
+> Started at 10:36 // Finished at 10:51 <br> *Meetings no longer follow the pre-planned schedule, but will be more often from now on*
 
 <br>
 
@@ -355,7 +355,7 @@ N/A
 &emsp;Astour, Krikor<br>
 &emsp;Kallas, Christina<br>
 &emsp;Loerick-Roger, Kerian<br>
-&emsp;Vlas, Veaceslav
+&emsp;Vlas, Veaceslav<br>
 
 <br>
 
@@ -363,22 +363,34 @@ N/A
 
 | Task | Status | Time |
 | ---- | ------ | ---- |
-| Recap of Deliverable 03 + Discussion on how to improve teamwork |  |  |
-| Discussion about 5th member leaving and if we want his help or not |  |  |
-| Overview of Deliverable 04 and its contents |  |  |
-| Splitting work + Setting timeline |  |  |
-| What's Next |  |  |
+| Discussion about 5th member leaving and if we want his help or not | Decision made | 3 minutes |
+| Overview of Deliverable 04 and its contents | Completed | 3 minutes |
+| Splitting work + Setting timeline | Completed | 6 minutes |
+| What's Next | Finished | 1 minute |
 
 <br>
 
 ## Decisions
+* We will not be accepting help from our fifth member
+* Split work:
+  * Veaceslav:<br> &emsp;> Executive Overview <br> &emsp;> Appendx 01 - User stories (whole team)<br>&emsp;> Appendix 03 - Story Mapping (With Kerian)
+  * Kerian:<br> &emsp;> Business Problem <br> &emsp;> Appendx 01 - User stories (whole team)<br>&emsp;> Appendix 03 - Story Mapping (With Veaceslav)
+  * Krikor:<br> &emsp;> Description of Client <br> &emsp;> Appendx 01 - User stories (whole team)<br>&emsp;> Appendix 02 - Acceptance Tests (With Christina)
+  * Christina:<br> &emsp;> Description of Future System Information <br> &emsp;> Appendx 01 - User stories (whole team)<br>&emsp;> Appendix 02 - Acceptance Tests (With Krikor)
+* Future Timeline:
+  * Wednesday the 9th we finish User stories
+  * Wednesday the 23rd we finish the Appendices
+  * Between Wednesday the 23rd and Friday the 25th final corrections and overviews
+
 
 
 <br>
 
 ## Events
-
+* Meeting Wednesday at 12:30
 
 <br>
 
 ## What's next?
+* Meeting for User stories Wednesday at 12:30
+* Working on Deliverable 04

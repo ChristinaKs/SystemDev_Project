@@ -343,3 +343,42 @@ N/A
 
 <br><br>
 
+# **Tuesday, 08th of March, 2022**
+
+## *Sixth Meeting*
+
+> Started at 12:45 // Finished at 12:55 <br> *Meeting was short and unofficial, not a regularly scheduled meeting*
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Recap of Deliverable 03 + Discussion on how to improve teamwork |  |  |
+| Discussion about 5th member leaving and if we want his help or not |  |  |
+| Overview of Deliverable 04 and its contents |  |  |
+| Splitting work + Setting timeline |  |  |
+| What's Next |  |  |
+
+<br>
+
+## Decisions
+
+
+<br>
+
+## Events
+
+
+<br>
+
+## What's next?

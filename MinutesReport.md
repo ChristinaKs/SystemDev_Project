@@ -504,7 +504,7 @@ N/A - same as previous meeting
 
 ## *Tenth Meeting*
 
-> Started at 9:40 // Finished at 11:18 <br> 
+> Started at 9:40 // Finished at 11:18 <br> This is an unofficial meeting since officially it was reported to Wednesday the 6th of April by the team leader
 
 <br>
 
@@ -526,6 +526,7 @@ N/A - same as previous meeting
 ## Decisions
 * The block diagram was not done due to lack of team members
 * Working on ERD instead
+* Veaceslav, the team leader (online - not in meeting) stated there shall be a meeting on wednesday at 12:30 in place of this one
 
 <br>
 
@@ -536,3 +537,11 @@ N/A - same as previous meeting
 
 ## What's next?
 * Working on Deliverable 06
+
+<br><br>
+
+# **Wednesday, 6th of April, 2022**
+
+## *Eleventh Meeting*
+
+> This meeting was cancelled due to the team leader reporting it a second time

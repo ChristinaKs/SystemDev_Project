@@ -394,3 +394,145 @@ N/A
 ## What's next?
 * Meeting for User stories Wednesday at 12:30
 * Working on Deliverable 04
+
+<br><br>
+
+# **Wednesday, 9th of March, 2022**
+
+## *Ninth Meeting*
+
+> Started at 12:45 // Finished at 12:5544 <br> 
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Complete User stories | finished | 10 minute |
+
+<br>
+
+## Decisions
+N/A - same as previous meeting
+
+
+<br>
+
+## Events
+* User stories were decided upon
+
+<br>
+
+## What's next?
+* Working on Deliverable 06
+
+<br><br><br>
+
+> Note: There were no official meetings for Deliverable 05 as most work was done through online communications and 
+
+<br><br><br>
+
+# **Friday, 1st of April, 2022**
+
+## *Ninth Meeting*
+
+> Started at 11:36 // Finished at 11:44 <br> *Meetings no longer follow the pre-planned schedule due to more online communications*
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Gantt Chart | finished | 1 minute |
+| Overview of Deliverable 06 and its contents | Completed | 3 minutes |
+| Splitting work + Setting timeline | Completed | 3 minutes |
+| Decide database platform | decision made | 1 minute |
+
+<br>
+
+## Decisions
+* Veaceslav will be updating the Gantt chart
+* Mysql will be used for the database
+* Assignments:
+  * Exec Overview = Veaceslav
+  * Business Problem = Kerian
+  * Narrative desc = Christina
+  * Block Diagram = All
+  * Appendix 01 = Christina + Krikor
+  * Appendix 02 = Kerian and Veaceslav for part 01 and Christina for Part 02
+  * Appendix 03 = ?? for Part 01 and Christina for Part 02
+  * Appendix 04 = Veaceslav
+  * Appendix 05 = Krikor and Kerian
+* Timeline: 
+  * By Wednesday night all appendices should be done
+  * Thursday complete deliverable 
+  * Present on Friday
+
+
+
+<br>
+
+## Events
+* Meeting Tuesday during classtime to do block diagram
+
+<br>
+
+## What's next?
+* Working on Deliverable 06
+
+<br><br>
+
+# **Tuesday, 5th of April, 2022**
+
+## *Tenth Meeting*
+
+> Started at 9:40 // Finished at 11:18 <br> 
+
+<br>
+
+## Attendance
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+*Note: Krikor had forewarned he would not be available for this meeting*
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Block Diagram | Not done | 0 minute |
+
+<br>
+
+## Decisions
+* The block diagram was not done due to lack of team members
+* Working on ERD instead
+
+<br>
+
+## Events
+* Christina and Kerian Completed the ERD (appendix 02)
+
+<br>
+
+## What's next?
+* Working on Deliverable 06

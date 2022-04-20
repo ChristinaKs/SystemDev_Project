@@ -1,14 +1,12 @@
 <?php
-class Home extends Controller
-
+class Product extends Controller
 {
-
     public function __construct()
     {
     }
 
     public function index()
     {
-        $this->view('Home/home');
+        $this->view('Product/product');
     }
 }

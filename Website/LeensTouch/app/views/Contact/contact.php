@@ -1,5 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
-
+<div class="container">
+<h1>Contact Us</h1>
 <form>
   <div class="float-container">
     <div class="form-group" style="width: 50%; float: left;">
@@ -33,5 +34,5 @@
     <button style="float: right;" type="submit" name='send' class="btn btn-primary">Send</button>
     <button style="float: right;" type="submit" name='cancel' class="btn btn-primary">Cancel</button>
 </form>
-
+</div>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

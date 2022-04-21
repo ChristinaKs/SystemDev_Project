@@ -9,4 +9,9 @@ class Catalog extends Controller
     {
         $this->view('Catalog/catalog');
     }
+
+    public function viewCart()
+    {
+        $this->view('Catalog/viewCart');
+    }
 }

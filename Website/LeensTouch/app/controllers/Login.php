@@ -12,29 +12,29 @@ class Login extends Controller
             $this->view('Login/index');
         }
         else{
-            $user = $this->loginModel->getUser($_POST['username']);
+            $user = $this->loginModel->getUser($_POST['email']);
             
             if($user != null){
-                $hashed_pass = $user->pass_hash;
+                $hashed_pass = $user->password;
                 $password = $_POST['password'];
                 if(password_verify($password,$hashed_pass)){
                     //echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/">';
                     $this->createSession($user);
                     $data = [
-                        'msg' => "Welcome, $user->username!",
+                        'msg' => "Welcome, $user->fname!",
                     ];
                     $this->view('Home/home',$data);
                 }
                 else{
                     $data = [
-                        'msg' => "Password incorrect! for $user->username",
+                        'msg' => "Password incorrect! for $user->email",
                     ];
                     $this->view('Login/index',$data);
                 }
             }
             else{
                 $data = [
-                    'msg' => "User: ". $_POST['username'] ." does not exists",
+                    'msg' => "Email: ". $_POST['email'] ." does not exists",
                 ];
                 $this->view('Login/index',$data);
             }
@@ -47,15 +47,21 @@ class Login extends Controller
             $this->view('Login/create');
         }
         else{
-            $user = $this->loginModel->getUser($_POST['username']);
+            $user = $this->loginModel->getUser($_POST['email']);
             if($user == null){
+                $promotions = isset($_POST['promotions']) ? 1 : 0;
+
                 $data = [
-                    'username' => trim($_POST['username']),
+                    'fname' => trim($_POST['fname']),
+                    'lname' => trim($_POST['lname']),
                     'email' => $_POST['email'],
+                    'promotions' => $promotions,
                     'pass' => $_POST['password'],
                     'pass_verify' => $_POST['verify_password'],
-                    'pass_hash' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                    'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                     'username_error' => '',
+                    'fname_error' => '',
+                    'lname_error' => '',
                     'password_error' => '',
                     'password_match_error' => '',
                     'password_len_error' => '',
@@ -64,24 +70,26 @@ class Login extends Controller
                 ];
                 if($this->validateData($data)){
                     if($this->loginModel->createUser($data)){
-                        echo 'Please wait creating the account for '.trim($_POST['username']);
+                        echo 'Please wait creating the account for '.trim($_POST['fname']);
                         echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/Login/">';
-                 }
-                } 
+                    }
+                }
             }
             else{
                 $data = [
-                    'msg' => "User: ". $_POST['username'] ." already exists",
+                    'msg' => "Email: ". $_POST['email'] ." already exists",
                 ];
                 $this->view('Login/create',$data);
             }
-            
         }
     }
 
     public function validateData($data){
-        if(empty($data['username'])){
-            $data['username_error'] = 'Username can not be empty';
+        if(empty($data['fname'])){
+            $data['fname_error'] = 'First Name can not be empty';
+        } 
+        if (empty($data['lname'])) {
+            $data['lname_error'] = 'Last Name can not be empty';
         }
         if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
             $data['email_error'] = 'Please check your email and try again';
@@ -92,7 +100,6 @@ class Login extends Controller
         if($data['pass'] != $data['pass_verify']){
             $data['password_match_error'] = 'Password does not match';
         }
-
         if(empty($data['username_error']) && empty($data['password_error']) && empty($data['password_len_error']) && empty($data['password_match_error'])){
             return true;
         }
@@ -102,8 +109,8 @@ class Login extends Controller
     }
 
     public function createSession($user){
-        $_SESSION['user_id'] = $user->id;
-        $_SESSION['user_username'] = $user->username;
+        $_SESSION['user_id'] = $user->user_id;
+        $_SESSION['user_fname'] = $user->email;
     }
 
     public function logout(){

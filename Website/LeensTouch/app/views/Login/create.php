@@ -2,10 +2,17 @@
 
 
   <form class="px-4 py-3" method="post" action="">
-    <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" class="form-control <?php echo (!empty($data['username_error'])) ? 'is-invalid' : ''; ?>" id="username" name="username" placeholder="Username">
-      <span class="invalid-feedback"><?php echo $data['username_error']; ?> </span>
+    <div class="float-container">
+      <div class="form-group" style="width: 50%; float: left;">
+          <label for="fnameInput">First Name</label>
+          <input type="text" class="form-control <?php echo (!empty($data['fname_error'])) ? 'is-invalid' : ''; ?>" id="fname" name="fname" placeholder="Enter your first name">
+          <span class="invalid-feedback"><?php echo $data['fname_error']; ?> </span>
+      </div>
+      <div class="form-group" style="width: 50%; float: left;">
+          <label for="lnameInput">Last Name</label>
+          <input type="text" class="form-control <?php echo (!empty($data['lname_error'])) ? 'is-invalid' : ''; ?>" id="lname" name="lname" placeholder="Enter your last name">
+          <span class="invalid-feedback"><?php echo $data['lname_error']; ?> </span>
+      </div>
     </div>
 
     <div class="form-group">
@@ -25,20 +32,22 @@
       <input type="password" class="form-control  <?php echo (!empty($data['password_match_error'])) ? 'is-invalid' : ''; ?>" id="verify_password" name="verify_password" placeholder="Re-enter the password">
       <span class="invalid-feedback"><?php echo $data['password_match_error']; ?> </span>
     </div>
+
+    <div class="form-group">
+      <input type="checkbox" id="promotions" name="promotions">
+      <label for="promotions">I consent to receiving promotional emails</label>
+    </div>
     
     <button type="submit" name="signup" class="btn btn-primary mt-2"> Sign up</button>
     <p class="text-center">Already registered? <a href="/LeensTouch/Login/">Login</a> </p>
-
+    
     <?php
-
-if(!empty($data['msg'])){
-    echo '<div class="alert alert-danger" role="alert">'.
-        $data['msg'].'
-    </div>';
-}
-
-?>
-
+      if(!empty($data['msg'])){
+        echo '<div class="alert alert-danger" role="alert">'.
+          $data['msg'].'
+          </div>';
+      }
+    ?>
   </form>
 
 <?php require APPROOT . '/views/includes/footer.php'; ?>

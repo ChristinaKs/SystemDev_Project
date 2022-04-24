@@ -17,26 +17,28 @@
     <h1>Update Products View</h1>
     
     <form action='' method='post' enctype="multipart/form-data">
-    <?php
-  // NEEDS EDITING
-?>
+
 
     <div class="form-group">
-        <label for="ProductName">Product Name</label>
-        <input name="ProductName" type="text" class="form-control" id="ProductName" value="<?php echo $data->ProductName?>">
+        <label for="product_name">Product Name</label>
+        <input name="product_name" type="text" class="form-control" id="product_name" value="<?php echo $data->product_name?>">
     </div><div class="form-group">
-        <label for="ProductDescription">Product Description</label>
-        <input name="ProductDescription" type="text" class="form-control" id="ProductDescription" value="<?php echo $data->ProductDescription?>">
+        <label for="description">Product Description</label>
+        <input name="description" type="text" class="form-control" id="ProductDescription" value="<?php echo $data->description?>">
     </div><div class="form-group">
-        <label for="ProductPrice">Product Price</label>
-        <input name="ProductPrice" type="text" class="form-control" id="ProductPrice" value="<?php echo $data->ProductPrice?>">
+        <label for="price">Product Price</label>
+        <input name="price" type="text" class="form-control" id="price" value="<?php echo $data->price?>">
     </div><div class="form-group">
-        <label for="ProductAmount">Product Amount</label>
-        <input name="ProductAmount" type="text" class="form-control" id="ProductAmount" value="<?php echo $data->ProductAmount?>">
+        <label for="colour">Product Colour</label>
+        <input name="colour" type="text" class="form-control" id="colour" value="<?php echo $data->colour?>">
+    </div>
+    </div><div class="form-group">
+        <label for="quantity">Product Amount</label>
+        <input name="quantity" type="text" class="form-control" id="quantity" value="<?php echo $data->quantity?>">
     </div>
     <div class="form-group">
-        <label for="picture">Product picture</label>
-        <input type='file' name='picture' class='form-control' />
+        <label for="image">Product picture</label>
+        <input type='file' name='image' class='form-control' />
     </div>
 
     <button type="submit" name='update' class="btn btn-primary">Update</button>

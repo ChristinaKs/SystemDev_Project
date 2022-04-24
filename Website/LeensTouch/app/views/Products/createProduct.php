@@ -17,27 +17,29 @@
     <h1>Create Products View</h1>
     
     <form action='' method='post' enctype="multipart/form-data">
-<?php
-  // NEEDS EDITING
-?>
+
     <div class="form-group">
-        <label for="ProductName">Product Name</label>
-        <input name="ProductName" type="text" class="form-control" id="ProductName" placeholder="Name of the product">
+        <label for="product_name">Product Name</label>
+        <input name="product_name" type="text" class="form-control" id="product_name" placeholder="Name of the product">
     </div><div class="form-group">
-        <label for="ProductDescription">Product Description</label>
-        <input name="ProductDescription" type="text" class="form-control" id="ProductDescription" placeholder="Description of the product">
+        <label for="description">Product Description</label>
+        <input name="description" type="text" class="form-control" id="description" placeholder="Description of the product">
     </div>
     <div class="form-group">
-        <label for="ProductPrice">Product Price</label>
-        <input name="ProductPrice" type="text" class="form-control" id="ProductPrice" placeholder="Price of the product">
+        <label for="price">Product Price</label>
+        <input name="price" type="text" class="form-control" id="price" placeholder="Price of the product">
     </div>
     <div class="form-group">
-        <label for="ProductAmount">Quantity Available</label>
-        <input name="ProductAmount" type="text" class="form-control" id="ProductAmount" placeholder="Quantity available">
+        <label for="colour">Product Volour</label>
+        <input name="colour" type="text" class="form-control" id="colour" placeholder="Product colour">
     </div>
     <div class="form-group">
-        <label for="ProductPicture">Product picture</label>
-        <input type='file' name='picture' class='form-control' />
+        <label for="quantity">Quantity Available</label>
+        <input name="quantity" type="text" class="form-control" id="quantity" placeholder="Quantity available">
+    </div>
+    <div class="form-group">
+        <label for="image">Product picture</label>
+        <input type='file' name='image' class='form-control' />
     </div>
 
     <button type="submit" name='register' class="btn btn-primary">Register</button>

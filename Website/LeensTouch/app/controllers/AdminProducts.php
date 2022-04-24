@@ -31,11 +31,12 @@
             else{
                 $filename= $this->imageUpload();
                 $data=[
-                    'ProductName' => trim($_POST['ProductName']),
-                    'ProductDescription' => trim($_POST['ProductDescription']),
-                    'ProductPrice' => trim($_POST['ProductPrice']),
-                    'ProductAmount' => trim($_POST['ProductAmount']),
-                    'picture' => $filename
+                    'product_name' => trim($_POST['product_name']),
+                    'description' => trim($_POST['description']),
+                    'price' => trim($_POST['price']),
+                    'colour' => trim($_POST['colour']),
+                    'quantity' => trim($_POST['quantity']),
+                    'image' => $filename
                 ];
                
                 if($this->productsModel->createProduct($data)){
@@ -50,7 +51,7 @@
             $filename=false;
             
             //save the file that gets sent as a picture
-            $file = $_FILES['picture'];
+            $file = $_FILES['image'];
             
             $acceptedTypes = ['image/jpeg'=>'jpg',
                 'image/gif'=>'gif',
@@ -87,11 +88,12 @@
             else{
                 $filename= $this->imageUpload();
                 $data=[
-                    'ProductName' => trim($_POST['ProductName']),
-                    'ProductDescription' => trim($_POST['ProductDescription']),
-                    'ProductPrice' => trim($_POST['ProductPrice']),
-                    'ProductAmount' => trim($_POST['ProductAmount']),
-                    'picture' => $filename,
+                    'product_name' => trim($_POST['product_name']),
+                    'description' => trim($_POST['description']),
+                    'price' => trim($_POST['price']),
+                    'colour' => trim($_POST['colour']),
+                    'quantity' => trim($_POST['quantity']),
+                    'image' => $filename,
                     'UPC' => $UPC
                 ];
                 if($this->productsModel->updateProduct($data)){

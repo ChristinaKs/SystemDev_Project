@@ -5,20 +5,17 @@
             $this->db = new Model;
         }
     
-        public function getUser($email){
-            $this->db->query("SELECT * FROM user WHERE email = :email");
-            $this->db->bind(':email', $email);
+        public function getUser($username){
+            $this->db->query("SELECT * FROM credentials WHERE username = :username");
+            $this->db->bind(':username',$username);
             return $this->db->getSingle();
         }
 
         public function createUser($data){
-            $this->db->query("INSERT INTO user (fname, lname, promotions, email, password) 
-            values (:fname, :lname, :promotions, :email, :password)");
-            $this->db->bind(':fname', $data['fname']);
-            $this->db->bind(':lname', $data['lname']);
-            $this->db->bind(':promotions', $data['promotions']);
-            $this->db->bind(':email', $data['email']);
-            $this->db->bind(':password', $data['password']);
+            $this->db->query("INSERT INTO credentials (username, pass_hash) values (:username, :pass_hash)");
+            $this->db->bind(':username', $data['username']);
+            $this->db->bind(':pass_hash', $data['pass_hash']);
+
 
             if($this->db->execute()){
                 return true;

@@ -1,7 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php'; 
 ?>
-    <h1>Home View</h1>
-    <p>This view is invoked by HomeController</p>
+    <img src="public/img/leenstouch_home.png" class=" float-start img-fluid" alt="" style="width:100%" >
 
     <?php
         if($data != []){

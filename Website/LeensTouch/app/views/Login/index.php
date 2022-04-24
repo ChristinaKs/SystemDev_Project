@@ -4,8 +4,8 @@
 
 <form class="px-4 py-3" method="post" action="">
     <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
     </div>
     <div class="form-group">
         <label for="password">Password</label>

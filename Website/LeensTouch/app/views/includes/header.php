@@ -46,15 +46,14 @@
             // }else{
             //   echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Shopper/editProfile"><i class="fa-solid fa-user"></i> Edit Profile </a></li>';
             // }
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['shopper_username'].'</a></li>';
           } 
           else {
             // echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>';
-            echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>';  
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/index"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+            echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>';
+            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';  
+            echo '<div style="margin-left:20px" class="d-flex align-items-center"><a href="/LeensTouch/Home"><img class="rounded-circle" src="'.URLROOT.'/public/img/LT-Logo.png" width="60"></a></div>';
           }
-          echo '<div style="margin-left:20px" class="d-flex align-items-center"><a href="/LeensTouch/Home"><img class="rounded-circle" src="'.URLROOT.'/public/img/LT-Logo.png" width="60"></a></div>';
         ?>
       </ul>
     </div>

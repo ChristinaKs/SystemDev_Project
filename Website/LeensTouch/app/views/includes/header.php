@@ -48,11 +48,33 @@
             // }
             echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
             echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+            echo '<input type="text" name="search_text"  placeholder="Search">
+            <select  name="search_type" <?php ?>>
+              <option value="Name">Name of product</option>
+              <option value="Colour" >By Colour</option>
+              <option value="available">Show Available</option>
+              <option value="sortLowest">Sort by price A-Z</option>
+              <option value="sortHighest">Sort by price Z-A</option>
+            </select>
+            <button type="submit" name="search"> Search</button>
+          </div>
+        </form>';
           } 
           else {
             // echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>';
             echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>';  
             echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/index"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+            echo '<input type="text" name="search_text"  placeholder="Search">
+            <select  name="search_type" <?php ?>>
+              <option value="Name">Name of product</option>
+              <option value="Colour" >By Colour</option>
+              <option value="available">Show Available</option>
+              <option value="sortLowest">Sort by price A-Z</option>
+              <option value="sortHighest">Sort by price Z-A</option>
+            </select>
+            <button type="submit" name="search"> Search</button>
+          </div>
+        </form>';
           }
           echo '<div style="margin-left:20px" class="d-flex align-items-center"><a href="/LeensTouch/Home"><img class="rounded-circle" src="'.URLROOT.'/public/img/LT-Logo.png" width="60"></a></div>';
         ?>

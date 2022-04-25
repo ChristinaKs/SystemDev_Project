@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
--- https://www.phpmyadmin.net/
+-- httpswww.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 08, 2022 at 08:13 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Host 127.0.0.1
+-- Generation Time Apr 22, 2022 at 0815 PM
+-- Server version 10.4.22-MariaDB
+-- PHP Version 8.1.2
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = NO_AUTO_VALUE_ON_ZERO;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `leenstouch_db`
+-- Database `leenstouch_db`
 --
 
 -- --------------------------------------------------------
@@ -75,6 +75,13 @@ CREATE TABLE `customization` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `customization`
+--
+
+INSERT INTO `customization` (`custom_id`, `text`, `image`) VALUES
+(1, 'This is my order text', 'image.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -97,25 +104,16 @@ CREATE TABLE `orders` (
 CREATE TABLE `products` (
   `upc` int(13) NOT NULL,
   `product_name` varchar(50) NOT NULL,
-  `product_type` varchar(15) NOT NULL,
+  `product_type` varchar(25) NOT NULL,
   `description` varchar(500) NOT NULL,
   `price` double NOT NULL,
   `image` varchar(100) NOT NULL,
   `colour` varchar(15) NOT NULL,
-  `availability` tinyint(1) NOT NULL,
-  `quantity` int(2) NOT NULL
+  `quantity` int(2) NOT NULL,
+  `fulfill_time` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `type`
---
-
-CREATE TABLE `type` (
-  `product_type` varchar(15) NOT NULL,
-  `size` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -129,9 +127,17 @@ CREATE TABLE `user` (
   `password` varchar(200) NOT NULL,
   `fname` varchar(30) NOT NULL,
   `lname` varchar(50) NOT NULL,
-  `address_id` int(5) NOT NULL,
-  `promotions` tinyint(1) NOT NULL
+  `address_id` int(5) DEFAULT NULL,
+  `promotions` tinyint(1) NOT NULL,
+  `cart_id` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`, `cart_id`) VALUES
+(3, 'email@domain.com', '$2y$10$34l0BOi82oX4OqWWIh1IQuntpkjTl.g4y9LdQX3pXR0idXLj8bfaC', 'fname', 'lname', NULL, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -175,25 +181,30 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`upc`),
-  ADD KEY `FK_PRODUCT_TYPE` (`product_type`);
+  ADD PRIMARY KEY (`upc`); 
 
 --
--- Indexes for table `type`
+-- Dumping data for table `products`
 --
-ALTER TABLE `type`
-  ADD PRIMARY KEY (`product_type`);
+
+INSERT INTO `products` (`upc`, `product_name` , `product_type`, `description`, `price`, `image`, `colour`,  `quantity`, `fulfill_time`) VALUES
+(1234, 'Blue Bag' ,'Bag', 'This is a satchel', 120, '/public/img/245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black',  3, 7);
+INSERT INTO `products` (`upc`, `product_name` , `product_type`, `description`, `price`, `image`, `colour`,  `quantity`, `fulfill_time`) VALUES
+(1235, 'Black Bag' ,'Bag', 'This is a bag', 70, '/public/img/269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue',  0, 99);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
-  ADD KEY `FK_ADDRESS_ID` (`address_id`);
+  ADD KEY `FK_ADDRESS_ID` (`address_id`),
+  ADD KEY `FK_CART_ID` (`cart_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT for product table
 --
+ALTER TABLE `products`
+  MODIFY `upc` int(13) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `address`
@@ -211,7 +222,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `customization`
 --
 ALTER TABLE `customization`
-  MODIFY `custom_id` int(8) NOT NULL AUTO_INCREMENT;
+  MODIFY `custom_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -223,7 +234,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -243,11 +254,7 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `FK_CART_ID` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`),
   ADD CONSTRAINT `FK_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
---
--- Constraints for table `products`
---
-ALTER TABLE `products`
-  ADD CONSTRAINT `FK_PRODUCT_TYPE` FOREIGN KEY (`product_type`) REFERENCES `type` (`product_type`);
+
 
 --
 -- Constraints for table `user`
@@ -256,6 +263,6 @@ ALTER TABLE `user`
   ADD CONSTRAINT `FK_ADDRESS_ID` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT*/ ;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS*/ ;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION*/ ;

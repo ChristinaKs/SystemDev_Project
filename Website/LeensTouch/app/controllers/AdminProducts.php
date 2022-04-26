@@ -1,6 +1,6 @@
 <?php
 
-    class Products extends Controller{
+    class AdminProducts extends Controller{
         public function __construct(){
             $this->productsModel = $this->model('productsModel');
             if(!isAdminLoggedIn()){
@@ -80,16 +80,16 @@
             return $filename;
         }
 
-        public function details($UPC){
+        public function details($upc){
             if(isAdminLoggedIn()){
-                $UPC = $this->productsModel->getProduct($UPC);
-                    $this->view('AdminProducts/details',$UPC);
+                $upc = $this->productsModel->getProduct($upc);
+                    $this->view('AdminProducts/details',$upc);
             }
         }
 
-        public function update($UPC){
+        public function update($upc){
             if(isAdminLoggedIn()){
-                $product = $this->productsModel->getProduct($UPC);
+                $product = $this->productsModel->getProduct($upc);
                 if(!isset($_POST['update'])){
                     $this->view('AdminProducts/updateProduct',$product);
                 }
@@ -102,7 +102,7 @@
                         'colour' => trim($_POST['colour']),
                         'quantity' => trim($_POST['quantity']),
                         'image' => $filename,
-                        'UPC' => $UPC
+                        'upc' => $upc
                     ];
                     if($this->productsModel->updateProduct($data)){
                         echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/AdminProducts/getProducts">';
@@ -111,9 +111,9 @@
             }
         }
 
-        public function delete($UPC){
+        public function delete($upc){
             $data=[
-                'UPC' => $UPC
+                'upc' => $upc
             ];
             if($this->productsModel->delete($data)){
                 echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/AdminProducts/getProducts">';

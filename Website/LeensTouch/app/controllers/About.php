@@ -31,13 +31,13 @@ class About extends Controller
             }
             else{
                 $data=[
-                    'firstparagraph' => trim($_POST['firstparagraph']),
-                    'secondparagraph' => trim($_POST['secondparagraph']),
-                    'thirdparagraph' => trim($_POST['thirdparagraph']),
-                    'aboutid' => 1
+                    'first_paragraph' => trim($_POST['first_paragraph']),
+                    'second_paragraph' => trim($_POST['second_paragraph']),
+                    'third_paragraph' => trim($_POST['third_paragraph']),
+                    'about_id' => 1
                 ];
                 if($this->aboutModel->updateAbout($data)){
-                    echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/About/displayAbout">';
+                    echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/About/displayAbout">';
                 }      
             }
     }

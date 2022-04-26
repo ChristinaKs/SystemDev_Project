@@ -1,4 +1,18 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
+<?php if (isAdminLoggedIn()) { ?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<?php } ?>
 
 <style>
  body{
@@ -48,6 +62,7 @@
   background-color:#e4c5bd;
 }
 </style>
+
 
 
 <div class="container-fluid">

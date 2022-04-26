@@ -5,10 +5,10 @@
   <div class="collapse navbar-collapse" id="mynavbar">
     <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>
+        <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/AdminProducts/createProducts">Create Products</a>
+        <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
       </li>
     </ul>
   </div>
@@ -33,17 +33,17 @@
                 echo '<td>
                 <div class="d-flex align-items-center"><img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$products->image.'" width="100" height="100"></div>
                 </td>';
-                echo"<td>$products->UPC</td>";
+                echo"<td>$products->upc</td>";
                 echo"<td>$products->product_name</td>";
                 echo"<td>$products->description</td>";
                 echo"<td>$products->price</td>";
                 echo"<td>$products->colour</td>";
                 echo"<td>$products->quantity</td>";
                 echo"<td>
-                <a href='/LeensTouch/AdminProducts/update/$products->UPC'> Update</a>
+                <a href='/LeensTouch/AdminProducts/update/$products->upc'> Update</a>
                 </td>";
                 echo"<td>
-                <a href='/LeensTouch/AdminProducts/delete/$products->UPC'> Delete</a>
+                <a href='/LeensTouch/AdminProducts/delete/$products->upc'> Delete</a>
                 </td>";
                 echo"</tr>";
             }

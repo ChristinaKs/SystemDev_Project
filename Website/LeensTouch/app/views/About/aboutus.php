@@ -1,18 +1,18 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
 <?php if (isAdminLoggedIn()) { ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="collapse navbar-collapse" id="mynavbar">
-            <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/LeensTouch/AdminProducts/createProducts">Create Products</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-    <?php } ?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<?php } ?>
 <form>
   <div class="form-group">
   
@@ -23,11 +23,11 @@
   <?php
   foreach($data["about"] as $about){
     echo "&emsp;&emsp;";
-    echo $about->firstparagraph;
+    echo $about->first_paragraph;
     echo "<br><br>&emsp;&emsp;";
-    echo $about->secondparagraph;
+    echo $about->second_paragraph;
     echo "<br><br>&emsp;&emsp;";
-    echo $about->thirdparagraph;
+    echo $about->third_paragraph;
   } 
   echo "<br><br>";
   if (isAdminLoggedIn()) {

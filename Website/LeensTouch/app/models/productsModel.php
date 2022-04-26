@@ -10,9 +10,9 @@
             return $this->db->getResultSet();
         }
 
-        public function getProduct($UPC){
-            $this->db->query("SELECT * FROM products WHERE UPC = :UPC");
-            $this->db->bind(':UPC',$UPC);
+        public function getProduct($upc){
+            $this->db->query("SELECT * FROM products WHERE upc = :upc");
+            $this->db->bind(':upc',$upc);
             return $this->db->getSingle();
         }
 
@@ -34,14 +34,14 @@
         }
 
         public function updateProduct($data){
-            $this->db->query("UPDATE products SET product_name=:product_name, description=:description, price=:price, colour=;colour, quantity=:quantity, image=:image WHERE UPC=:UPC");
+            $this->db->query("UPDATE products SET product_name=:product_name, description=:description, price=:price, colour=:colour, quantity=:quantity, image=:image WHERE upc=:upc");
             $this->db->bind(':product_name', $data['product_name']);
             $this->db->bind(':description', $data['description']);
             $this->db->bind(':price', $data['price']);
             $this->db->bind(':colour', $data['colour']);
             $this->db->bind(':quantity', $data['quantity']);
             $this->db->bind(':image',$data['image']);
-            $this->db->bind('UPC',$data['UPC']);
+            $this->db->bind('upc',$data['upc']);
             if($this->db->execute()){
                 return true;
             }
@@ -52,8 +52,8 @@
         }
 
         public function delete($data){
-            $this->db->query("DELETE FROM products WHERE UPC=:UPC");
-            $this->db->bind('UPC',$data['UPC']);
+            $this->db->query("DELETE FROM products WHERE upc=:upc");
+            $this->db->bind('upc',$data['upc']);
 
             if($this->db->execute()){
                 return true;

@@ -69,27 +69,26 @@
 <h1>Catalog</h1>
 <div class="product-container">
     <?php
-            foreach($data['products'] as $product){
-                 echo '
-                    <div class="product-card">
-                     <div class=" product-image">
-                         <form method="get" action="/LeensTouch/Product">
-                             <input type="hidden" name="product_id" value="'.$product->upc.'">
-                              <input type="image" id="image"
-                               src="'.$product->image.'" class="product-thumb" alt="" > 
-                        </form>
-                     </div>
-                    <div class=" product-info">
-                       <h5 class="product-brand">Name: '.$product->product_name.'</h2>
-                            <div class="price">Price: '.(number_format($product->price, 2, ',', ' ')).'$</div>
-                            '.(($product->quantity<'1')?'<div class="availability">Sold Out</div><div>&nbsp</div>':
-                                                        '<div class="availability">Available</div> 
-                                                         <a class="card-btn" href="http://">Add to cart</a>'
-                             ).'
-                        </div>
-                    </div>  
-                ';             
-            }
+    foreach($data['products'] as $product){
+      echo '
+        <div class="product-card">
+          <div class=" product-image">
+            <form method="get" action="/LeensTouch/Product">
+              <input type="hidden" name="product_id" value="'.$product->upc.'">
+              <input type="image" id="image" src="'.$product->image.'" class="product-thumb" alt="" > 
+            </form>
+          </div>
+          <div class=" product-info">
+            <h5 class="product-brand">Name: '.$product->product_name.'</h2>
+            <div class="price">Price: '.(number_format($product->price, 2, ',', ' ')).'$</div>
+              '.(($product->quantity<'1')?'<div class="availability">Sold Out</div><div>&nbsp</div>':
+              '<div class="availability">Available</div> 
+              <a class="card-btn" href="/LeensTouch/Catalog/addToCart"">Add to cart</a>'
+              ).'
+            </div>
+          </div>  
+      ';
+    }
     ?>   
 </div>
 

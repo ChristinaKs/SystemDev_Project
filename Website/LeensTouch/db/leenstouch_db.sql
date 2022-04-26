@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
--- httpswww.phpmyadmin.net
+-- https://www.phpmyadmin.net/
 --
--- Host 127.0.0.1
--- Generation Time Apr 22, 2022 at 0815 PM
--- Server version 10.4.22-MariaDB
--- PHP Version 8.1.2
+-- Host: 127.0.0.1
+-- Generation Time: Apr 26, 2022 at 08:45 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
-SET SQL_MODE = NO_AUTO_VALUE_ON_ZERO;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database `leenstouch_db`
+-- Database: `leenstouch_db`
 --
 
 -- --------------------------------------------------------
@@ -60,8 +60,17 @@ CREATE TABLE `cart` (
   `cart_id` int(6) NOT NULL,
   `upc` int(13) NOT NULL,
   `total_price` double NOT NULL,
-  `custom_id` int(8) NOT NULL
+  `custom_id` int(8) DEFAULT NULL,
+  `quantity` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `upc`, `total_price`, `custom_id`, `quantity`) VALUES
+(1, 1234, 120, NULL, 0),
+(2, 1234, 120, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -113,7 +122,13 @@ CREATE TABLE `products` (
   `fulfill_time` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `products`
+--
 
+INSERT INTO `products` (`upc`, `product_name`, `product_type`, `description`, `price`, `image`, `colour`, `quantity`, `fulfill_time`) VALUES
+(1234, 'Blue Bag', 'Bag', 'This is a satchel', 120, '/public/img/245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black', 3, 7),
+(1235, 'Black Bag', 'Bag', 'This is a bag', 70, '/public/img/269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue', 0, 99);
 
 -- --------------------------------------------------------
 
@@ -137,7 +152,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`, `cart_id`) VALUES
-(3, 'email@domain.com', '$2y$10$34l0BOi82oX4OqWWIh1IQuntpkjTl.g4y9LdQX3pXR0idXLj8bfaC', 'fname', 'lname', NULL, 1, NULL);
+(1, 'leen.touch1@gmail.com', '$2y$10$g7epNda/PGnowcRAEIh.qOlya1dA07rIAEPiyk19bLuA.K883gT0.', 'Leen', 'Antoun', NULL, 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -181,16 +196,7 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`upc`); 
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`upc`, `product_name` , `product_type`, `description`, `price`, `image`, `colour`,  `quantity`, `fulfill_time`) VALUES
-(1234, 'Blue Bag' ,'Bag', 'This is a satchel', 120, '/public/img/245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black',  3, 7);
-INSERT INTO `products` (`upc`, `product_name` , `product_type`, `description`, `price`, `image`, `colour`,  `quantity`, `fulfill_time`) VALUES
-(1235, 'Black Bag' ,'Bag', 'This is a bag', 70, '/public/img/269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue',  0, 99);
+  ADD PRIMARY KEY (`upc`);
 
 --
 -- Indexes for table `user`
@@ -201,10 +207,8 @@ ALTER TABLE `user`
   ADD KEY `FK_CART_ID` (`cart_id`);
 
 --
--- AUTO_INCREMENT for product table
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `products`
-  MODIFY `upc` int(13) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `address`
@@ -216,7 +220,7 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customization`
@@ -229,6 +233,12 @@ ALTER TABLE `customization`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(7) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `upc` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1238;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -254,8 +264,6 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `FK_CART_ID` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`),
   ADD CONSTRAINT `FK_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
-
-
 --
 -- Constraints for table `user`
 --
@@ -263,6 +271,6 @@ ALTER TABLE `user`
   ADD CONSTRAINT `FK_ADDRESS_ID` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`);
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT*/ ;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS*/ ;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION*/ ;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

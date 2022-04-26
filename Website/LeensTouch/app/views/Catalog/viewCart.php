@@ -27,10 +27,13 @@
 }
 </style>
 
-<!-- <pre>
+<pre>
 <?php
 //   echo $data['subtotal'];
 //   var_dump($data);
+//   foreach ($data['cart'] as $item) {
+//     echo $item->upc;   
+//   }
 //   foreach ($_SESSION['cart'] as $product ) {
 //     echo $product;
 //   }
@@ -38,43 +41,53 @@
 //     echo $product;
 //   }
 ?>
-</pre> -->
+</pre> 
 
-<?php //foreach ($data as $cart){ ?>
+<?php foreach ($data as $item){ ?>
     <form action="cart" method="post">
-        <div class="row">
-            <div class="column-1">
-                <div class="image">
-                    <img src="" alt="image" width="140" height="140">
-                    <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
-                        <input type="submit" value="Remove" name="remove" style="margin-right: 20px;">
-                        <input type="submit" value="Edit" name="edit">
+        <div class="item">
+            <div class="row">
+                <div class="column-1">
+                    <div class="image">
+                        <img src="<?= URLROOT.$item['image'] ?>" alt="image" width="140" height="140">
+                        <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
+                            <input type="submit" value="Remove" name="remove" style="margin-right: 20px;">
+                            <input type="submit" value="Edit" name="edit">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="column-2">
-                <h5>Name of product</h5>
-                <select name="quantity" id="quantity">
-                    <option value="x">X</option>
-                </select>
-                <p style="margin-top: 10px; font-size: 13px; width: 50%;">
-                    Personalizations <br> 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo 
-                    recusandae unde a ipsa. Recusandae sunt perferendis deserunt
-                </p>
-            </div>
-            <div class="column-3">
-                <h5>XX.XX$</h5>
+                <div class="column-2">
+                    <h5><?= $item['name']?></h5>
+                    <select name="quantity" id="quantity">
+                        <option value="x">X</option>
+                    </select>
+                    <p style="margin-top: 10px; font-size: 13px; width: 50%;">
+                        Personalizations: <br> 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo 
+                        recusandae unde a ipsa. Recusandae sunt perferendis deserunt
+                    </p>
+                </div>
+                <div class="column-3">
+                    <h5><?= $item['total_price'] ?>$</h5>
+                </div>
             </div>
         </div>
     </form>
     <hr>
-<?php //} ?>
+<?php } ?>
 
 <div class="checkout">
     <span class="text">Subtotal</span>
-    <span class="price">&dollar;XX.XX</span>
+    <span class="price">&dollar;
+        <?php
+            $price = 0;
+            foreach ($data as $item) {
+                $price += $item['total_price'];
+            }
+            echo $price;
+        ?>
+    </span>
     <input style="float: right; margin-right: 170px;" type="submit" value="Checkout" name="checkout"> 
 </div>
 

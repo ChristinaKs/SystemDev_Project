@@ -1,55 +1,108 @@
 <?php require APPROOT . '/views/includes/header.php'; 
 ?>
+    <?php if (isAdminLoggedIn()) { ?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<?php } ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="mynavbar">
-    <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
-      <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<style>
+ body{
+ }
+.product-card{
+  height: 450px;
+  width: 300px;
+  margin: 10px 60px;
+  display: none;
+  animation: blur .8s ease-out ;
+  margin-bottom: 40px
+}
 
-    <h1>Get Products View</h1>
+.product-container{
+  display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
 
-    <table  class="table table-bordered">
-        <tr>
-            <td>Image</td>
-            <td>UPC</td>
-            <td>Product Name</td>
-            <td>Description</td>
-            <td>Colour</td>
-            <td>Price</td>
-            <td>Quantity Available</td>
-            <td colspan="3" class="text-center"> Actions</td>
-        </tr>
-        <?php
-            foreach($data["products"] as $products){
-                echo"<tr>";
-                echo '<td>
-                <div class="d-flex align-items-center"><img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$products->image.'" width="100" height="100"></div>
-                </td>';
-                echo"<td>$products->upc</td>";
-                echo"<td>$products->product_name</td>";
-                echo"<td>$products->description</td>";
-                echo"<td>$products->price</td>";
-                echo"<td>$products->colour</td>";
-                echo"<td>$products->quantity</td>";
-                echo"<td>
-                <a href='/LeensTouch/AdminProducts/update/$products->upc'> Update</a>
-                </td>";
-                echo"<td>
-                <a href='/LeensTouch/AdminProducts/delete/$products->upc'> Delete</a>
-                </td>";
-                echo"</tr>";
-            }
-        ?>
-    </table>
+.product-thumb {
+  height: 300px;
+  width: 300px;
+  margin-bottom: 10px;
+  border:1px solid black;
+}
 
+.noContent {
+  pointer-events: none;
+  display: none!important;
+}
 
-   
+.product-info{
+  border-style: solid;
+  border-width: 1px;
+
+  background-color:#e4c5bd;
+}
+</style>
+
+<div class="container-fluid">
+<h1>My Products</h1>
+<div class="product-container">
+  <?php
+    foreach($data['products'] as $product){
+      echo '
+        <div class="product-card">
+          <div class=" product-image">
+            <form method="get" action="/LeensTouch/Product">
+              <input type="hidden" name="product_id" value="'.$product->upc.'">
+              <input type="image" id="image" src="'.$product->image.'" class="product-thumb" alt="" > 
+            </form>
+          </div>
+          <div class=" product-info">
+            <h5 class="product-brand">Name: '.$product->product_name.'</h2>
+            <div class="price">Price: '.(number_format($product->price, 2, ',', ' ')).'$</div>
+              '.(($product->quantity<'1')?'<div class="availability">Sold Out</div><div>&nbsp</div>':
+              '<div class="availability">Available</div> 
+              <a class="card-btn" href="http://">Add to cart</a>'
+              ).'
+            </div>
+            <a href="/LeensTouch/AdminProducts/update/'.$product->upc.'"> Update</a>
+            <a style="float: right;" href="/LeensTouch/AdminProducts/delete/'.$product->upc.'"> Delete</a>
+          </div>  
+      ';
+    }
+  ?>   
+</div>
+
+<button id = "loadMore" type="button" class="btn btn-primary btn-lg rounded-3 mx-auto mb-5" style="display: block; background-color:#e4c5bd; border: 1px solid #000000; color: #000000; ">
+        Load More</button>
+        
+   <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+<script>
+  $(document).ready(function () {
+  $(".product-card").slice(0, 4).show();
+  $("#loadMore").on("click", function(e){
+    e.preventDefault();
+    $(".product-card:hidden").slice(0, 4).slideDown();
+    if ($(".product-card:hidden").length == 0) {
+      $("#loadMore").text("No Content").addClass("noContent");
+    }
+  });
+  })
+</script>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

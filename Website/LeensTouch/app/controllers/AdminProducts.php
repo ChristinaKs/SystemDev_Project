@@ -28,7 +28,7 @@
         }
 
         public function createProduct(){
-            if(isAdminLoggedIn){
+            if(isAdminLoggedIn()){
                 if(!isset($_POST['register'])){
                     $this->view('AdminProducts/createProduct');
                 }

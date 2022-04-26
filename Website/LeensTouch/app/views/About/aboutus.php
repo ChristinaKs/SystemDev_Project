@@ -1,17 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
 <?php if (isAdminLoggedIn()) { ?>
-        <!-- echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
-        echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">';
-        echo '<ul class="navbar-nav mr-auto">';
-        echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>';
-        echo '</li>';
-        echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create Product</a>';
-        echo '</li>';
-        echo '</ul>';
-        echo '</div>';
-        echo '</nav>'; -->  
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">

@@ -13,7 +13,7 @@
             //if(isset($_POST['viewProduct'])){
             //    $this->view('Products/viewProduct');
             //}
-            $this->view('Products/getProducts');
+            $this->view('AdminProducts/getProducts');
         }
 
         public function getProducts(){
@@ -22,7 +22,7 @@
                 $data = [
                     "products" => $products
                 ];
-                $this->view('Products/getProducts',$data);
+                $this->view('AdminProducts/getProducts',$data);
 
             }
         }
@@ -30,7 +30,7 @@
         public function createProduct(){
             if(isAdminLoggedIn){
                 if(!isset($_POST['register'])){
-                    $this->view('Products/createProduct');
+                    $this->view('AdminProducts/createProduct');
                 }
                 else{
                     $filename= $this->imageUpload();
@@ -45,7 +45,7 @@
                    
                     if($this->productsModel->createProduct($data)){
                         echo 'Please wait we are creating the product for you!';
-                        header('Location: /LeensTouch/Products/getProducts');
+                        header('Location: /LeensTouch/AdminProducts/getProducts');
                     }
                 }
             }
@@ -83,7 +83,7 @@
         public function details($UPC){
             if(isAdminLoggedIn()){
                 $UPC = $this->productsModel->getProduct($UPC);
-                    $this->view('Products/details',$UPC);
+                    $this->view('AdminProducts/details',$UPC);
             }
         }
 
@@ -91,7 +91,7 @@
             if(isAdminLoggedIn()){
                 $product = $this->productsModel->getProduct($UPC);
                 if(!isset($_POST['update'])){
-                    $this->view('Products/updateProduct',$product);
+                    $this->view('AdminProducts/updateProduct',$product);
                 }
                 else{
                     $filename= $this->imageUpload();
@@ -105,7 +105,7 @@
                         'UPC' => $UPC
                     ];
                     if($this->productsModel->updateProduct($data)){
-                        echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/Products/getProducts">';
+                        echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/AdminProducts/getProducts">';
                     }      
                 }
             }
@@ -116,7 +116,7 @@
                 'UPC' => $UPC
             ];
             if($this->productsModel->delete($data)){
-                echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/Products/getProducts">';
+                echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/AdminProducts/getProducts">';
             }
         }     
     }

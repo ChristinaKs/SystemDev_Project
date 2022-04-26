@@ -4,10 +4,10 @@
         echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">';
         echo '<ul class="navbar-nav mr-auto">';
         echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="/LeensTouch/Products/getProducts">Get Products</a>';
+        echo '<a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>';
         echo '</li>';
         echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="/LeensTouch/Products/createProduct">Create Product</a>';
+        echo '<a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create Product</a>';
         echo '</li>';
         echo '</ul>';
         echo '</div>';
@@ -16,10 +16,10 @@
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link" href="/LeensTouch/Products/getProducts">Get Products</a>
+                <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/LeensTouch/Products/createProducts">Create Products</a>
+                <a class="nav-link" href="/LeensTouch/AdminProducts/createProducts">Create Products</a>
               </li>
             </ul>
           </div>

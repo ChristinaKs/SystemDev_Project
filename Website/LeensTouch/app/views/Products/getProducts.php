@@ -5,10 +5,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Products/getProducts">Get Products</a>
+        <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">Get Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Products/createProduct">Create Product</a>
+        <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create Product</a>
       </li>
     </ul>
   </div>
@@ -40,10 +40,10 @@
                 echo"<td>$products->colour</td>";
                 echo"<td>$products->quantity</td>";
                 echo"<td>
-                <a href='/LeensTouch/Products/update/$products->UPC'> Update</a>
+                <a href='/LeensTouch/AdminProducts/update/$products->UPC'> Update</a>
                 </td>";
                 echo"<td>
-                <a href='/LeensTouch/Products/delete/$products->UPC'> Delete</a>
+                <a href='/LeensTouch/AdminProducts/delete/$products->UPC'> Delete</a>
                 </td>";
                 echo"</tr>";
             }

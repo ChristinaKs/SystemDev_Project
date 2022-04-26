@@ -24,7 +24,7 @@
         <input name="product_name" type="text" class="form-control" id="product_name" value="<?php echo $data->product_name?>">
     </div><div class="form-group">
         <label for="description">Product Description</label>
-        <input name="description" type="text" class="form-control" id="ProductDescription" value="<?php echo $data->description?>">
+        <input name="description" type="text" class="form-control" id="description" value="<?php echo $data->description?>">
     </div><div class="form-group">
         <label for="price">Product Price</label>
         <input name="price" type="text" class="form-control" id="price" value="<?php echo $data->price?>">

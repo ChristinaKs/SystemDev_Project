@@ -36,8 +36,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
-    <ul class="navbar-nav me-auto">
-    </ul>
+    <ul class="navbar-nav me-auto"></ul>
       <ul class="nav navbar-nav navbar-right">
         <?php
           if (isLoggedIn()) {

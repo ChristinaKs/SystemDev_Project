@@ -1,6 +1,6 @@
 <?php require APPROOT . '/views/includes/header.php'; 
 ?>
-
+<!-- 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -12,7 +12,7 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
 
 <?php
 $about = $data[0];

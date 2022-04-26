@@ -18,7 +18,7 @@ class Login extends Controller
                 $hashed_pass = $user->password;
                 $password = $_POST['password'];
                 if(password_verify($password,$hashed_pass)){
-                    //echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/">';
+                    //echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/">';
                     $this->createSession($user);
                     $data = [
                         'msg' => "Welcome, $user->fname!",
@@ -37,6 +37,9 @@ class Login extends Controller
                     'msg' => "Email: ". $_POST['email'] ." does not exists",
                 ];
                 $this->view('Login/index',$data);
+            }
+            if($_SESSION['user_id'] == 1){
+                $_SESSION['adminSession'] = true;
             }
         }
     }
@@ -71,7 +74,7 @@ class Login extends Controller
                 if($this->validateData($data)){
                     if($this->loginModel->createUser($data)){
                         echo 'Please wait creating the account for '.trim($_POST['fname']);
-                        echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/Login/">';
+                        echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/Login/">';
                     }
                 }
             }

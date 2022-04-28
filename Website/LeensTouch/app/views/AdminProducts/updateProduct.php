@@ -14,7 +14,7 @@
   </div>
 </nav>
 
-    <h1>Update Products View</h1>
+    <h1>Update a Product</h1>
     
     <form action='' method='post' enctype="multipart/form-data">
 

@@ -13,37 +13,40 @@
     </ul>
   </div>
 </nav>
-
-    <h1>Create Products View</h1>
+    
+  <div class="title" style="max-width: 1200px; margin: auto;">
+    <h1>Create a Product</h1>
+</div>
     
     <form action='' method='post' enctype="multipart/form-data">
 
-    <div class="form-group">
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="product_name">Product Name</label>
         <input name="product_name" type="text" class="form-control" id="product_name" placeholder="Name of the product">
-    </div><div class="form-group">
+    </div><div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="description">Product Description</label>
         <input name="description" type="text" class="form-control" id="description" placeholder="Description of the product">
     </div>
-    <div class="form-group">
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="price">Product Price</label>
         <input name="price" type="text" class="form-control" id="price" placeholder="Price of the product">
     </div>
-    <div class="form-group">
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="colour">Product Volour</label>
         <input name="colour" type="text" class="form-control" id="colour" placeholder="Product colour">
     </div>
-    <div class="form-group">
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="quantity">Quantity Available</label>
         <input name="quantity" type="text" class="form-control" id="quantity" placeholder="Quantity available">
     </div>
-    <div class="form-group">
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
         <label for="image">Product picture</label>
         <input type='file' name='image' class='form-control' />
     </div>
-
-    <button type="submit" name='register' class="btn btn-primary">Register</button>
-    </form>
+    <div class="form-group" style="max-width: 1200px; margin: auto;">
+    <button type="submit" name='register' class="btn btn-primary" style="background-color: #e4c5bd; color: white;">Register</button>
+    </div>  
+  </form>
 
    
 <?php require APPROOT . '/views/includes/footer.php'; ?>

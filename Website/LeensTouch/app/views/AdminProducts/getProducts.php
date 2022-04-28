@@ -66,11 +66,8 @@
     foreach($data['products'] as $product){
       echo '
         <div class="product-card">
-          <div class=" product-image">
-            <form method="get" action="/LeensTouch/Product">
-              <input type="hidden" name="product_id" value="'.$product->upc.'">
-              <input type="image" id="image" src="'.$product->image.'" class="product-thumb" alt="" > 
-            </form>
+          <div class=" product-image"">
+            <img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$product->image.'" width="320" height="320">
           </div>
           <div class=" product-info">
             <h5 class="product-brand">Name: '.$product->product_name.'</h2>

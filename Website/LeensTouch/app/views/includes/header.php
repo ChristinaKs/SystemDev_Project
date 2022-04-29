@@ -45,8 +45,12 @@
             // }else{
             //   echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Shopper/editProfile"><i class="fa-solid fa-user"></i> Edit Profile </a></li>';
             // }
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+            echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/User/editProfile">
+            <i class="fa-solid "></i> Edit Profile</a></li>';
+            echo '<li class="nav-item"><a class="nav-link">|</li>';
+            echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
+            echo '<li class="nav-item"><a class="nav-link">|</li>';
+            echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
             echo ' <form class="form-inline" action="/LeensTouch/Search/getResult/" method="POST">
             <div class="search-bar">
             <input type="text" name="search_text"  placeholder="Search">

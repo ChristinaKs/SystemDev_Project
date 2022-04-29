@@ -83,12 +83,10 @@
             <img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$product->image.'" width="320" height="320">
             </form>
           </div>
-          <div class=" product-info">
+          <div class="pb-3 product-info">
             <h5 class="product-brand">Name: '.$product->product_name.'</h2>
             <div class="price">Price: '.(number_format($product->price, 2, ',', ' ')).'$</div>
-              '.(($product->quantity<'1')?'<div class="availability">Sold Out</div><div>&nbsp</div>':
-              '<div class="availability">Available</div> 
-              <a class="card-btn" href="/LeensTouch/Catalog/addToCart"">Add to cart</a>'
+              '.(($product->quantity<'1')?'<div class="availability">Sold Out</div>':'<div class="availability">Available</div>'
               ).'
             </div>
           </div>  

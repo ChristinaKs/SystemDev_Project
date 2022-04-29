@@ -27,7 +27,10 @@
             <div class="ms-5 mb-3"><span class="h5 ">Estimated Fulfillment Time:</span> X days</div>
             <div class="ms-5 mb-3"><span class="h5 ">Available:</span> 
                     <?php echo ($data->quantity<'1')?"Sold Out": $data->quantity." amounts" ?> </div>
-           
+               <div class="ms-5 mb-1 h5 ">Personalizations:</div>
+            <textarea class="me-5 ms-5" id="message" cols="5" rows="2" placeholder="Write your message here"></textarea>
+   
+            <input type='file' name='picture' class='me-5 ms-5 mt-1'/>
             
     </div>
     <!-- If quantity greater than 0, the Add to Cart Button will be displayed. -->

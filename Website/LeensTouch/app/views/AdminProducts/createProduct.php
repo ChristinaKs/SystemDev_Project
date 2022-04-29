@@ -10,12 +10,18 @@
       <li class="nav-item">
         <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/LeensTouch/Orders/getOrders">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/LeensTouch/Clients/viewClients">My Clients</a>
+      </li>
     </ul>
   </div>
 </nav>
     
-  <div class="title" style="max-width: 1200px; margin: auto;">
-    <h1>Create a Product</h1>
+<div class="title" style="max-width: 1200px; margin: auto;">
+  <h1>Create a Product</h1>
 </div>
     
     <form action='' method='post' enctype="multipart/form-data">

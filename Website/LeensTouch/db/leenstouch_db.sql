@@ -127,8 +127,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`upc`, `product_name`, `product_type`, `description`, `price`, `image`, `colour`, `quantity`, `fulfill_time`) VALUES
-(1234, 'Black Bag', 'Bag', 'This is a satchel', 120, '/img/245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black', 3, 7),
-(1235, 'Blue Bag', 'Bag', 'This is a bag', 70, '/img/269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue', 0, 99);
+(1234, 'Blue Bag', 'Bag', 'This is a satchel', 120, '/public/img/245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black', 3, 7),
+(1235, 'Black Bag', 'Bag', 'This is a bag', 70, '/public/img/269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue', 0, 99);
 
 -- --------------------------------------------------------
 

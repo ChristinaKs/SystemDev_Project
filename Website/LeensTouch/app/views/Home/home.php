@@ -16,7 +16,7 @@
     </div>
   </nav>
 <?php } ?>
-    <img src="public/img/leenstouch_home.png" class=" float-start img-fluid" alt="" style="width:100%" >
+    <img src="<?php echo URLROOT.'/public/img/home_bg.png'?>" class=" float-start img-fluid" alt="" style="width:100%" >
 
     <?php
         if($data != []){

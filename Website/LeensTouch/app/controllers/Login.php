@@ -113,7 +113,8 @@ class Login extends Controller
 
     public function createSession($user){
         $_SESSION['user_id'] = $user->user_id;
-        $_SESSION['user_fname'] = $user->email;
+        $_SESSION['user_fname'] = $user->fname;
+        $_SESSION['user_lname'] = $user->lname;
     }
 
     public function logout(){

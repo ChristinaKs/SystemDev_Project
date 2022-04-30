@@ -9,7 +9,7 @@
         }
 
         public function index(){
-            $this->view('User/index');
+            $this->view('User/editProfile');
         }
 
         public function getUsers(){
@@ -101,6 +101,8 @@
                 
             }
         }
+
+
 
         public function delete($user_id){
             $data=[

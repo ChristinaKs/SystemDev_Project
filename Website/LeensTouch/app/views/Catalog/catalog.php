@@ -80,7 +80,8 @@
         <div class="product-card">
           <div class=" product-image">
             <form method="get" action="/LeensTouch/Product">
-            <img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$product->image.'" width="320" height="320">
+               <input type="hidden" name="product_id" value="'.$product->upc.'">
+               <input type="image" id="image" src="'.URLROOT.'/public/img/'.$product->image.'" class="product-thumb" alt="" > 
             </form>
           </div>
           <div class="pb-3 product-info">

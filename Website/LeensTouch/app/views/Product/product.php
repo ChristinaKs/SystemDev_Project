@@ -2,7 +2,7 @@
 
 
         <div class="product-image mt-0">
-            <img src=" <?php echo URLROOT.'/public/img/'.$data->image ?>" class=" float-start img-fluid" alt="" style="width:35%">  
+            <img src=" <?php echo URLROOT.'/public/img/'.$data->image ?>" class=" float-start img-fluid" alt="" style="width:36%">  
         </div>
         
         <div class="product-info d-grid ms-5 mt-0">

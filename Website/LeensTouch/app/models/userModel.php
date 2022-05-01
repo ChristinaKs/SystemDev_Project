@@ -33,12 +33,10 @@
         }
 
         public function updateUser($data){
-            $this->db->query("UPDATE users SET Name=:name, City=:city, Phone=:phone, Picture=:picture WHERE ID=:user_id");
-            $this->db->bind(':name', $data['name']);
-            $this->db->bind(':city', $data['city']);
-            $this->db->bind(':phone', $data['phone']);
-            $this->db->bind(':picture',$data['picture']);
-            $this->db->bind('user_id',$data['ID']);
+            $this->db->query("UPDATE users SET fname=:fname, lname=:lname WHERE user_id=:user_id");
+            $this->db->bind(':fname', $data['fname']);
+            $this->db->bind(':lname', $data['lname']);
+            
             if($this->db->execute()){
                 return true;
             }

@@ -100,21 +100,21 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-1" style="padding: 0px;padding-bottom: 10px; background-color:#b2b4bfad!important; ">
   <ul style="margin: auto; height: 50px; text-align: center;" class="nav navbar-nav navbar-right">
   
-  <a class="nav-link pt-0" href="/LeensTouch/Home"><p  style="font-size: 40px; font-family:'LucidaCalligraphy-Italic'; color: #000000;"><em><?php echo SITENAME; ?></em></p></a>
+  <a class="nav-link pt-0 text-center" href="/LeensTouch/Home"><p  style="font-size: 40px; font-family:'LucidaCalligraphy-Italic'; color: #000000;"><em><?php echo SITENAME; ?></em></p></a>
   </ul>
 </nav>
 
 <nav class=" navbar navbar-expand-sm navbar-light bg-secondary h5 p-0 pt-2 mb-0 " style="color: #000000!important; background-color:#b2b4bfad!important; ">
   <div class="collapse navbar-collapse" id="mynavbar">
     <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
-      <li class="nav-item me-5">
-        <a class="nav-link" href="/LeensTouch/Catalog">Catalog</a>
+      <li class="nav-item me-3 ps-4  pe-1">
+        <a class="nav-link fs-4 text-dark" href="/LeensTouch/Catalog">Catalog</a>
       </li>
-      <li class="nav-item me-5">
-        <a class="nav-link" href="/LeensTouch/About">About Us</a>
+      <li class="nav-item ms-5 me-5 ps-5 pe-5">
+        <a class="nav-link fs-4 text-dark" href="/LeensTouch/About">About Us</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Contact">Contact Us</a>
+      <li class="nav-item ms-5">
+        <a class="nav-link fs-4 text-dark" href="/LeensTouch/Contact">Contact Us</a>
       </li>
     </ul>
   </div>

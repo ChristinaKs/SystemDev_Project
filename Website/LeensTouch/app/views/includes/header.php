@@ -28,16 +28,17 @@
 </head>
 
 <body>
-<div class="container-fluid ps-0 pe-0" >
+<div class="container-fluid ps-0 pe-0 " >
 
-<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-3 pb-0 " style="padding: 0px;background-color:#b2b4bfad!important; ">
+<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-3 pb-0  " style="padding: 0px;background-color:#b2b4bfad!important; ">
   <div class="container-fluid " >
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-    <ul class="navbar-nav me-auto"></ul>
-      <ul class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse row justify-content-end" id="mynavbar">
+    <div class="col-11 ">
+
+      <ul class="nav justify-content-end navbar-nav navbar-right">
         <?php
           if (isLoggedIn()) {
             // if(!isProfiledIn()) {
@@ -51,47 +52,54 @@
             echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
             echo '<li class="nav-item"><a class="nav-link">|</li>';
             echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/Catalog/viewCart"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
-            echo ' <form class="form-inline" action="/LeensTouch/Search/getResult/" method="POST">
-            <div class="search-bar">
-            <input type="text" name="search_text"  placeholder="Search">
-            <select  name="search_type" <?php ?>>
-              <option value="Name">Name of product</option>
-              <option value="Colour" >By Colour</option>
-              <option value="available">Show Available</option>
-              <option value="sortLowest">Sort by price A-Z</option>
-              <option value="sortHighest">Sort by price Z-A</option>
-            </select>
-            <button type="submit" name="search"> Search</button>
-          </div>
-        </form>';
+            
           } 
           else {
             // echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/Create"><i class="fa-solid fa-user-plus"></i> Sign Up</a></li>';
             echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/"><i class="fa-solid fa-right-to-bracket"></i> Sign in</a></li>';  
-            echo '<li style="margin-left:20px" class="nav-item"><a class="nav-link" href="/LeensTouch/Login/index"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
-            echo '<form class="form-inline" action="/LeensTouch/Search/getResult/" method="POST">
-            <div class="search-bar">
-            <input type="text" name="search_text"  placeholder="Search">
-            <select  name="search_type" <?php ?>>
-              <option value="Name">Name of product</option>
-              <option value="Colour" >By Colour</option>
-              <option value="available">Show Available</option>
-              <option value="sortLowest">Sort by price A-Z</option>
-              <option value="sortHighest">Sort by price Z-A</option>
-            </select>
-            <button type="submit" name="search"> Search</button>
-          </div>
-        </form>';
+            echo '<li class="nav-item"><a class="nav-link">|</li>';
+            echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Login/index"><i class="fa-solid fa-cart-shopping"></i> My Cart </a></li>';
+           
           }
-          echo '<div style="margin-left:20px" class="d-flex align-items-center"><a href="/LeensTouch/Home"><img class="rounded-circle" src="'.URLROOT.'/public/img/LT-Logo.png" width="60"></a></div>';
-        ?>
+           ?>
       </ul>
+        </div>
+      <div class="row">
+      <ul class="nav justify-content-end navbar-nav navbar-right ">
+      <?php
+          
+            echo ' <form class="form-inline me-2" action="/LeensTouch/Search/getResult/" method="POST">
+                  <div class="search-bar">
+                  <input type="text" name="search_text"  placeholder="Search">
+                  <select  name="search_type" <?php ?>>
+                    <option value="Name">Name of product</option>
+                    <option value="Colour" >By Colour</option>
+                    <option value="available">Show Available</option>
+                    <option value="sortLowest">Sort by price A-Z</option>
+                    <option value="sortHighest">Sort by price Z-A</option>
+                  </select>
+                  <button type="submit" name="search"> Search</button>
+                </div>
+              </form>';
+              ?>
+      </ul>
+          </div>
+    </div>
+    <div class="col-1 justify-content-end ps-5 me-0 ">
+      <?php
+         
+        echo '<div class="me-0"><a href="/LeensTouch/Home"><img class="rounded-circle" src="'.URLROOT.'/public/img/LT-Logo.png" width="60"></a></div>';
+        ?>
     </div>
   </div>
+
+
 </nav>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-secondary" style="padding: 0px;padding-bottom: 10px; background-color:#b2b4bfad!important; ">
+
+<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-1" style="padding: 0px;padding-bottom: 10px; background-color:#b2b4bfad!important; ">
   <ul style="margin: auto; height: 50px; text-align: center;" class="nav navbar-nav navbar-right">
+  
   <a class="nav-link pt-0" href="/LeensTouch/Home"><p  style="font-size: 40px; font-family:'LucidaCalligraphy-Italic'; color: #000000;"><em><?php echo SITENAME; ?></em></p></a>
   </ul>
 </nav>

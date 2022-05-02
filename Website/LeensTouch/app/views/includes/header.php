@@ -46,8 +46,7 @@
             // }else{
             //   echo '<li class="nav-item"><a class="nav-link" href="/LeensTouch/Shopper/editProfile"><i class="fa-solid fa-user"></i> Edit Profile </a></li>';
             // }
-            echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/User/editProfile">
-            <i class="fa-solid "></i> Edit Profile</a></li>';
+            echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/User/editProfile"><i class="fa-solid "></i> Edit Profile</a></li>';
             echo '<li class="nav-item"><a class="nav-link">|</li>';
             echo '<li  class="nav-item"><a class="nav-link" href="/LeensTouch/Login/logout"><i class="fa-solid fa-sign-out"></i> Logout  '. $_SESSION['user_fname'].'</a></li>';
             echo '<li class="nav-item"><a class="nav-link">|</li>';

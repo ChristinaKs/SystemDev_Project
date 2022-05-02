@@ -5,18 +5,18 @@
             $this->db = new Model;
         }
         public function getUsers(){
-            $this->db->query("SELECT * FROM users");
+            $this->db->query("SELECT * FROM user");
             return $this->db->getResultSet();
         }
 
         public function getUser($user_id){
-            $this->db->query("SELECT * FROM users WHERE ID = :user_id");
+            $this->db->query("SELECT * FROM user WHERE user_id = :user_id");
             $this->db->bind(':user_id',$user_id);
             return $this->db->getSingle();
         }
 
         public function createUser($data){
-            $this->db->query("INSERT INTO users (Name, City, Phone, Picture) values (:name, :city, :phone, :picture)");
+            $this->db->query("INSERT INTO user (Name, City, Phone, Picture) values (:name, :city, :phone, :picture)");
             $this->db->bind(':name', $data['name']);
             $this->db->bind(':city', $data['city']);
             $this->db->bind(':phone', $data['phone']);
@@ -32,8 +32,9 @@
 
         }
 
-        public function updateUser($data){
-            $this->db->query("UPDATE users SET fname=:fname, lname=:lname WHERE user_id=:user_id");
+        public function updateUser($data, $userId){
+            $this->db->query("UPDATE user SET fname=:fname, lname=:lname WHERE user_id=:user_id");
+            $this->db->bind(':user_id', $userId);
             $this->db->bind(':fname', $data['fname']);
             $this->db->bind(':lname', $data['lname']);
             
@@ -47,7 +48,7 @@
         }
 
         public function delete($data){
-            $this->db->query("DELETE FROM users WHERE ID=:user_id");
+            $this->db->query("DELETE FROM user WHERE ID=:user_id");
             $this->db->bind('user_id',$data['ID']);
 
             if($this->db->execute()){

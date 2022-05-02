@@ -9,7 +9,26 @@
         }
 
         public function index(){
-            $this->view('User/editProfile');
+            if(!isset($_POST['add'])){
+                $user_ID = $_SESSION['user_id'];
+                $data = $this->userModel->getUser($user_ID);
+                $this->view('User/editProfile',$data);
+            }else{
+                $user = $this->userModel->getUser($_SESSION['user_id']);
+                // echo "<pre>";
+                // var_dump($product);
+                // echo "</pre>";
+                // echo $product->upc;
+                $data=[
+                    'fnale' => $user->fname,
+                    'lname' => $user->lname
+                ]; 
+                // if($this->userModel->addToCart($data)){
+                //     echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/Catalog/viewCart">';
+                // }      
+            }
+
+            //$this->view('User/editProfile');
         }
 
         public function getUsers(){
@@ -79,29 +98,31 @@
             
         }
 
+        
         public function update($user_id){
-            $user = $this->userModel->getUser($user_id);
+            // var_dump($_POST['fname'], $_POST['lname'], $user_id);
+            // $user = $this->userModel->getUser($user_id);
+
             if(!isset($_POST['update'])){
-                $this->view('User/updateUser',$user);
+                $this->view('User/updateUser',$user_id);
             }
             else{
-                $filename= $this->imageUpload();
+                // $filename= $this->imageUpload();
                 $data=[
-                    'name' => trim($_POST['name']),
-                    'city' => trim($_POST['city']),
-                    'phone' => trim($_POST['phone']),
-                    'picture' => $filename,
-                    'ID' => $user_id
+                    'fname' => trim($_POST['fname']),
+                    'lname' => trim($_POST['lname'])
+                    
                 ];
-                if($this->userModel->updateUser($data)){
-                    echo 'Please wait we are upating the user for you!';
-                    //header('Location: /MVC/LeensTouch/getUsers');
-                    echo '<meta http-equiv="Refresh" content="2; url=/LeensTouch/User/getUsers">';
+
+                if($this->userModel->updateUser($data, $user_id)){
+                    // echo 'Please wait we are upating the user for you!';
+                    // //header('Location: /MVC/LeensTouch/getUsers');
+                    header('location:/LeensTouch/User/editProfile?status=success');
+                    echo '<meta http-equiv="Refresh" content="0; url=/LeensTouch/User/editProfile">';
+                    
                 }
-                
             }
         }
-
 
 
         public function delete($user_id){

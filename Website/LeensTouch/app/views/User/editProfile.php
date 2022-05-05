@@ -20,7 +20,7 @@
     ?>
 
     <div class="mt-4 mb-5 h1 text-center">Edit My Account</div>
-    <form action="<?= URLROOT ?>/User/update/5 " method='POST' enctype="multipart/form-data">
+    <form action="<?= URLROOT ?>/User/update/<?= $_SESSION['user_id'] ?>" method='POST' enctype="multipart/form-data">
 
     <div class="form-group ">
         <label class="fs-4 fw-bold" for="fnameinput">First Name: </label>

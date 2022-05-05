@@ -9,6 +9,8 @@
         }
 
         public function index(){
+
+            
             if(!isset($_POST['add'])){
                 $user_ID = $_SESSION['user_id'];
                 $data = $this->userModel->getUser($user_ID);
@@ -20,7 +22,7 @@
                 // echo "</pre>";
                 // echo $product->upc;
                 $data=[
-                    'fnale' => $user->fname,
+                    'fname' => $user->fname,
                     'lname' => $user->lname
                 ]; 
                 // if($this->userModel->addToCart($data)){
@@ -105,6 +107,7 @@
 
             if(!isset($_POST['update'])){
                 $this->view('User/updateUser',$user_id);
+        
             }
             else{
                 // $filename= $this->imageUpload();
@@ -117,6 +120,9 @@
                 if($this->userModel->updateUser($data, $user_id)){
                     // echo 'Please wait we are upating the user for you!';
                     // //header('Location: /MVC/LeensTouch/getUsers');
+                    // var_dump($data);
+                  //  console.log( $data);
+                    
                     header('location:/LeensTouch/User/editProfile?status=success');
                     echo '<meta http-equiv="Refresh" content="0; url=/LeensTouch/User/editProfile">';
                     

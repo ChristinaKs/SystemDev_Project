@@ -24,38 +24,35 @@
   <h1>All Orders</h1>
 </div>
 
-<div class="orderTable" style="max-width: 1200px; margin: auto;">
-  <table  class="table table-bordered" >
-    <tr>
-      <td>Order ID</td>
-      <td>User ID</td>
-      <td>Total Price</td>
-      <td>Order Status</td>
-      <td>View Details</td>
-    </tr>
-    <?php
-      $totalPrice = 0;
-      foreach($data["orders"] as $orders){
-        // $totalPrice += $product->ProductPrice*$product->Quantity;
-        echo"<tr>";
-        echo"<td>$orders->order_id</td>";
-        echo"<td>$orders->user_id</td>";
-        echo"<td>$orders->total_price</td>";
-        echo"<td>
-          <form action='/TermProject/Orders/updateOrderStatus/$orders->order_id' method='post'> 
-          <input type='checkbox' name='OrderStatusCB' onChange='this.form.submit()'";
-        if($orders->status == 'Shipped'){
-          echo "checked";
-        }
-        echo "> Shipped
-          </form>
-          </td>";
-        echo"<td>
-          <a href='/TermProject/Orders/getOrder/$orders->order_id'>View Details</a>
-          </td>";
-        echo"</tr>";
+<div class="orderTable table-bordered" style="margin: 100px; border: 1px solid black;">
+  <tr>
+    <td>Order ID</td>
+    <td>Client ID</td>
+    <td>Order Status</td>
+    <td>Total Price</td>
+    <td>View Details</td>
+  </tr>
+  <?php
+    $totalPrice = 0;
+    foreach($data["orders"] as $orders){
+      echo"<tr>";
+      echo"<td>$orders->order_id</td>";
+      echo"<td>$orders->user_id</td>";
+      echo"<td>
+        <form action='/LeensTouch/Orders/updateOrderStatus/$orders->order_id' method='post'> 
+        <input type='checkbox' name='OrderStatusCB' onChange='this.form.submit()'";
+      if($orders->status == 'Shipped'){
+        echo "checked";
       }
-    ?>
-  </table>
+      echo "> Shipped
+        </form>
+        </td>";
+      echo"<td>$orders->total_price</td>";
+      echo"<td>
+        <a href='/LeensTouch/Orders/getOrder/$orders->order_id'>View Details</a>
+        </td>";
+      echo"</tr>";
+    }
+  ?>
 </div>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

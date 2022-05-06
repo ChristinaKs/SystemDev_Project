@@ -20,7 +20,7 @@
   </div>
 </nav>
     
-<div class="title" style="max-width: 1200px; margin: auto;">
+<div class="title" style="margin-left: 50px; float: left;">
   <h1>All Orders</h1>
 </div>
 

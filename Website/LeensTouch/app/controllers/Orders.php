@@ -20,9 +20,9 @@
         }
 
         public function getOrder($order_id){
-            $order_detail = $this->orderModel->getSingleOrder($order_id);
+            $order_details = $this->orderModel->getSingleOrder($order_id);
             $data = [
-                "order_detail" => $order_detail,
+                "order_details" => $order_details,
                 "order_id" => $order_id
             ];
             // echo "<pre>";

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2022 at 08:45 PM
+-- Generation Time: May 06, 2022 at 03:46 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,16 +61,9 @@ CREATE TABLE `cart` (
   `upc` int(13) NOT NULL,
   `total_price` double NOT NULL,
   `custom_id` int(8) DEFAULT NULL,
-  `quantity` int(2) NOT NULL
+  `quantity` int(2) NOT NULL,
+  `user_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cart_id`, `upc`, `total_price`, `custom_id`, `quantity`) VALUES
-(1, 1234, 120, NULL, 0),
-(2, 1234, 120, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -84,13 +77,6 @@ CREATE TABLE `customization` (
   `image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `customization`
---
-
-INSERT INTO `customization` (`custom_id`, `text`, `image`) VALUES
-(1, 'This is my order text', 'image.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -100,8 +86,24 @@ INSERT INTO `customization` (`custom_id`, `text`, `image`) VALUES
 CREATE TABLE `orders` (
   `order_id` int(7) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `cart_id` int(6) NOT NULL,
   `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_details`
+--
+
+CREATE TABLE `order_details` (
+  `order_details_id` int(11) NOT NULL,
+  `order_id` int(7) NOT NULL,
+  `upc` int(13) NOT NULL,
+  `product_name` varchar(50) NOT NULL,
+  `quantity` int(2) NOT NULL,
+  `price` double(10,2) NOT NULL,
+  `custom_text` varchar(500) NOT NULL,
+  `custom_image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -127,8 +129,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`upc`, `product_name`, `product_type`, `description`, `price`, `image`, `colour`, `quantity`, `fulfill_time`) VALUES
-(1234, 'Blue Bag', 'Bag', 'This is a satchel', 120, '245222320_543794790063973_4504688221895774228_n.jpg', 'Beige,Black', 3, 7),
-(1235, 'Black Bag', 'Bag', 'This is a bag', 70, '269900631_5151348744931452_7872243565783486310_n.jpg', 'Blue', 0, 99);
+(1238, 'Stacked Necklaces', '', 'Three stackable necklaces: A small beaded necklace, a chain and an evil eye chain', 27.5, '6273e67a534b0.jpg', 'Golden', 3, 0),
+(1239, 'Name Clutch', '', 'Weaved clutch with dual coloured stripe down the middle. Customizable with any word', 32, '6273e6fb15e06.jpg', 'Blue and white', 9, 0),
+(1240, 'Beaded Bracelet', '', 'Faceted beaded bracelet', 4, '6273e75843777.jpg', 'red', 13, 0),
+(1241, 'Beach Hat', '', 'Beach hat, customizable with any name', 23, '6273e792e76d8.jpg', 'black', 0, 0),
+(1242, 'Bracelet stack', '', 'Three bracelets, first with flat beads and a letter, second with round beads and both an evil eye and a letter, last one with flat beads and a name', 15, '6273e7cda82fa.jpg', 'blue and white', 15, 0);
 
 -- --------------------------------------------------------
 
@@ -143,16 +148,17 @@ CREATE TABLE `user` (
   `fname` varchar(30) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `address_id` int(5) DEFAULT NULL,
-  `promotions` tinyint(1) NOT NULL,
-  `cart_id` int(6) DEFAULT NULL
+  `promotions` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`, `cart_id`) VALUES
-(1, 'leen.touch1@gmail.com', '$2y$10$g7epNda/PGnowcRAEIh.qOlya1dA07rIAEPiyk19bLuA.K883gT0.', 'Leen', 'Antoun', NULL, 1, NULL);
+INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`) VALUES
+(1, 'leen.touch1@gmail.com', '$2y$10$g7epNda/PGnowcRAEIh.qOlya1dA07rIAEPiyk19bLuA.K883gT0.', 'Leen', 'Antoun', NULL, 1),
+(4, 'kerian@loerick.com', '$2y$10$fWbual2Kgqtv.nI9IPmZAeGDNPR9nhm/3TYZn00U60AX1uC4nqEeO', 'Kerian', 'L', NULL, 0),
+(5, 'k@l.com', '$2y$10$JrRkLzwMsuo/BTHUIXsQ9uPtKNTqxXgu0vEur8Ot2jbfWpQCtANAS', 'k', 'lo', NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -176,7 +182,8 @@ ALTER TABLE `address`
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `FK_UPC` (`upc`),
-  ADD KEY `FK_CUSTOM_ID` (`custom_id`);
+  ADD KEY `FK_CUSTOM_ID` (`custom_id`),
+  ADD KEY `userfk` (`user_id`);
 
 --
 -- Indexes for table `customization`
@@ -189,8 +196,15 @@ ALTER TABLE `customization`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`),
-  ADD KEY `FK_USER_ID` (`user_id`),
-  ADD KEY `FK_CART_ID` (`cart_id`);
+  ADD KEY `FK_USER_ID` (`user_id`);
+
+--
+-- Indexes for table `order_details`
+--
+ALTER TABLE `order_details`
+  ADD PRIMARY KEY (`order_details_id`),
+  ADD KEY `orderid_fk` (`order_id`),
+  ADD KEY `upc_fk` (`upc`);
 
 --
 -- Indexes for table `products`
@@ -203,8 +217,7 @@ ALTER TABLE `products`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
-  ADD KEY `FK_ADDRESS_ID` (`address_id`),
-  ADD KEY `FK_CART_ID` (`cart_id`);
+  ADD KEY `FK_ADDRESS_ID` (`address_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -220,13 +233,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cart_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `customization`
 --
 ALTER TABLE `customization`
-  MODIFY `custom_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `custom_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -235,16 +248,22 @@ ALTER TABLE `orders`
   MODIFY `order_id` int(7) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `upc` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1238;
+  MODIFY `upc` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1243;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -255,14 +274,21 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `FK_CUSTOM_ID` FOREIGN KEY (`custom_id`) REFERENCES `customization` (`custom_id`),
-  ADD CONSTRAINT `FK_UPC` FOREIGN KEY (`upc`) REFERENCES `products` (`upc`);
+  ADD CONSTRAINT `FK_UPC` FOREIGN KEY (`upc`) REFERENCES `products` (`upc`),
+  ADD CONSTRAINT `userfk` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `FK_CART_ID` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`),
   ADD CONSTRAINT `FK_USER_ID` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+
+--
+-- Constraints for table `order_details`
+--
+ALTER TABLE `order_details`
+  ADD CONSTRAINT `orderid_fk` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
+  ADD CONSTRAINT `upc_fk` FOREIGN KEY (`upc`) REFERENCES `products` (`upc`);
 
 --
 -- Constraints for table `user`

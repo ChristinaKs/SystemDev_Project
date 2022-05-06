@@ -24,6 +24,18 @@
 }
 .checkout {
     margin-left: 50px;
+    <?php if(empty($data)){?>
+        display: none;
+    <?php } ?>
+}
+.emptyMessage{
+    <?php if(!empty($data)){?>
+        display: none;
+    <?php }else{ ?>
+        margin: auto;
+        width: 10%;
+        padding: 10px;
+    <?php } ?>
 }
 </style>
 
@@ -43,33 +55,38 @@
 ?>
 </pre> 
 
-<?php foreach ($data as $item){ ?>
-    <form action="cart" method="post">
+<?php $total = 0; foreach ($data as $item){ ?>
+    <form action="" method="post">
         <div class="item">
             <div class="row">
                 <div class="column-1">
                     <div class="image">
                         <img src="<?= URLROOT.$item['image'] ?>" alt="image" width="140" height="140">
                         <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
-                            <input type="submit" value="Remove" name="remove" style="margin-right: 20px;">
+                            <!-- <input type="submit" value="Remove" name="remove" style="margin-right: 20px;" onclick=""> -->
+                            <a href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
                             <input type="submit" value="Edit" name="edit">
+                            <button type="submit" name="update">Update</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="column-2">
                     <h5><?= $item['name']?></h5>
-                    <select name="quantity" id="quantity">
-                        <option value="x">X</option>
+                    <input style="display: none;" hidden type='number' name='dropdown[0][cart_id]' value="<?=$item['cart_id']?>"/>
+                    <select name="dropdown[0][quantity]" class="form-select form-select-sm" aria-label=".form-select-sm example" style="width:60px">
+                        <?php $count = 1; for ($i=0; $i < $item['itemquantity']; $i++) {?>
+                            <option <?php if($count == $item['quantity']){ ?> selected <?php } ?> value="<?=$count?>"><?=$count?></option>
+                            <!-- <option <?php if (isset($_POST['dropdown'])) { if($_POST['dropdown'] == 'CAD'){ ?> selected="true" <?php } } elseif ($_SESSION['API'] == 'CAD') { ?> selected="true" <?php } ?> value="CAD">CAD</option> -->
+                        <?php $count++; } ?>
                     </select>
                     <p style="margin-top: 10px; font-size: 13px; width: 50%;">
                         Personalizations: <br> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo 
-                        recusandae unde a ipsa. Recusandae sunt perferendis deserunt
+                        <?=$item['custom']['0']['text']?>
                     </p>
                 </div>
                 <div class="column-3">
-                    <h5><?= $item['total_price'] ?>$</h5>
+                    <h5><?php echo $item['total_price'] * $item['quantity']; $total += $item['total_price'] * $item['quantity']?>$</h5>
                 </div>
             </div>
         </div>
@@ -81,14 +98,19 @@
     <span class="text">Subtotal</span>
     <span class="price">&dollar;
         <?php
-            $price = 0;
-            foreach ($data as $item) {
-                $price += $item['total_price'];
-            }
-            echo $price;
+            // $price = 0;
+            // foreach ($data as $item) {
+            //     $price += $item['total_price'] ;
+            // }
+            echo $total;
         ?>
     </span>
-    <input style="float: right; margin-right: 170px;" type="submit" value="Checkout" name="checkout"> 
+    <a class="nav-link" href="/LeensTouch/Checkout/index/<?=$total?>">Checkout</a>
+</div>
+
+<div class="emptyMessage">
+        <span class="text">Your cart is Empty</span>
+        <a href="/LeensTouch/Catalog/catalog" style="margin-top:10px;">Continue Shopping</a>
 </div>
 
 

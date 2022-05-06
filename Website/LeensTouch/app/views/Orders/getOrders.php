@@ -14,7 +14,7 @@
         <a class="nav-link" href="/LeensTouch/Orders/getOrders">Orders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Clients/viewClients">My Clients</a>
+        <a class="nav-link" href="/LeensTouch/Users/getUsers">My Clients</a>
       </li>
     </ul>
   </div>
@@ -24,7 +24,7 @@
   <h1>All Orders</h1>
 </div>
 
-<div class="orderTable table-bordered" style="margin: 100px; border: 1px solid black;">
+<div class="orderTable table-bordered" style="margin: 75px; border: 1px solid black;">
   <tr>
     <td>Order ID</td>
     <td>Client ID</td>

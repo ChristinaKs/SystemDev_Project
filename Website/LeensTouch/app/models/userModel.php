@@ -4,6 +4,7 @@
         public function __construct(){
             $this->db = new Model;
         }
+
         public function getUsers(){
             $this->db->query("SELECT * FROM user");
             return $this->db->getResultSet();
@@ -22,14 +23,12 @@
             $this->db->bind(':phone', $data['phone']);
             $this->db->bind(':picture',$data['picture']);
             
-
             if($this->db->execute()){
                 return true;
             }
             else{
                 return false;
             }
-
         }
 
         public function updateUser($data, $userId){

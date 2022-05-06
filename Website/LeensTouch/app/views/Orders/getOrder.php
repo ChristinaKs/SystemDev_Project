@@ -15,7 +15,7 @@
         <a class="nav-link" href="/LeensTouch/Orders/getOrders">Orders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Clients/viewClients">My Clients</a>
+        <a class="nav-link" href="/LeensTouch/Users/getUsers">My Clients</a>
       </li>
     </ul>
   </div>

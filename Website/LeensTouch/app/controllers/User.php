@@ -90,13 +90,13 @@
             return $filename;
         }
 
-        public function details($user_id){
-            $user = $this->userModel->getUser($user_id);
+        // public function details($user_id){
+        //     $user = $this->userModel->getUser($user_id);
 
            
-                $this->view('User/details',$user);
+        //         $this->view('User/details',$user);
             
-        }
+        // }
 
         
         public function update($user_id){

@@ -37,6 +37,14 @@
         padding: 10px;
     <?php } ?>
 }
+/* .removeButton{
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+} */
 </style>
 
 <pre>
@@ -64,9 +72,9 @@
                         <img src="<?= URLROOT.$item['image'] ?>" alt="image" width="140" height="140">
                         <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
                             <!-- <input type="submit" value="Remove" name="remove" style="margin-right: 20px;" onclick=""> -->
-                            <a href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
-                            <input type="submit" value="Edit" name="edit">
-                            <button type="submit" name="update">Update</button>
+                            <a class="btn btn-secondary btn-sm" href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
+                            <input class="btn btn-secondary" type="submit" value="Edit" name="edit">
+                            <button style="margin-top: 10px;" class="btn btn-secondary" type="submit" name="update">Update</button>
                         </div>
                     </div>
                 </div>
@@ -105,7 +113,7 @@
             echo $total;
         ?>
     </span>
-    <a class="nav-link" href="/LeensTouch/Checkout/index/<?=$total?>">Checkout</a>
+    <a class="btn btn-secondary" href="/LeensTouch/Checkout/index/<?=$total?>">Checkout</a>
 </div>
 
 <div class="emptyMessage">

@@ -7,7 +7,7 @@
             $this->db->query("SELECT * FROM products
                                 WHERE product_name = :product_name");
             $this->db->bind(':product_name', $product_name);
-            return $this->db->getResulSet();
+            return $this->db->getResultSet();
         }
 
         public function sortByPriceHighest(){

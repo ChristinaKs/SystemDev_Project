@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2022 at 03:46 AM
+-- Generation Time: May 08, 2022 at 06:10 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -59,7 +59,7 @@ CREATE TABLE `address` (
 CREATE TABLE `cart` (
   `cart_id` int(6) NOT NULL,
   `upc` int(13) NOT NULL,
-  `total_price` double NOT NULL,
+  `total_price` double(10,2) NOT NULL,
   `custom_id` int(8) DEFAULT NULL,
   `quantity` int(2) NOT NULL,
   `user_id` int(4) NOT NULL
@@ -86,8 +86,17 @@ CREATE TABLE `customization` (
 CREATE TABLE `orders` (
   `order_id` int(7) NOT NULL,
   `user_id` int(4) NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` varchar(10) DEFAULT NULL,
+  `total_price` double(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `user_id`, `status`, `total_price`) VALUES
+(1, 4, '', 36.00),
+(2, 4, 'Shipped', 58.50);
 
 -- --------------------------------------------------------
 
@@ -101,10 +110,21 @@ CREATE TABLE `order_details` (
   `upc` int(13) NOT NULL,
   `product_name` varchar(50) NOT NULL,
   `quantity` int(2) NOT NULL,
-  `price` double(10,2) NOT NULL,
+  `unit_price` double(10,2) NOT NULL,
   `custom_text` varchar(500) NOT NULL,
-  `custom_image` varchar(100) NOT NULL
+  `custom_image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_details`
+--
+
+INSERT INTO `order_details` (`order_details_id`, `order_id`, `upc`, `product_name`, `quantity`, `unit_price`, `custom_text`, `custom_image`) VALUES
+(2, 1, 1240, 'Beaded Bracelet', 1, 4.00, 'No Customization wanted, just like the picture', NULL),
+(3, 1, 1239, 'Name Clutch ', 1, 32.00, 'Name. \"KMS\"', NULL),
+(5, 2, 1240, 'Beaded Bracelet', 2, 4.00, 'bla bla bla auybvyiurlqvlyasdbvylsabvr', NULL),
+(6, 2, 1241, 'Beach Hat', 2, 23.00, 'THe name is \"Karen\" in blue \"Karen bond 007\"', NULL),
+(7, 2, 1238, 'Stacked Necklaces', 2, 27.50, 'N/A', NULL);
 
 -- --------------------------------------------------------
 
@@ -117,7 +137,7 @@ CREATE TABLE `products` (
   `product_name` varchar(50) NOT NULL,
   `product_type` varchar(25) NOT NULL,
   `description` varchar(500) NOT NULL,
-  `price` double NOT NULL,
+  `price` double(10,2) NOT NULL,
   `image` varchar(100) NOT NULL,
   `colour` varchar(15) NOT NULL,
   `quantity` int(2) NOT NULL,
@@ -129,11 +149,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`upc`, `product_name`, `product_type`, `description`, `price`, `image`, `colour`, `quantity`, `fulfill_time`) VALUES
-(1238, 'Stacked Necklaces', '', 'Three stackable necklaces: A small beaded necklace, a chain and an evil eye chain', 27.5, '6273e67a534b0.jpg', 'Golden', 3, 0),
-(1239, 'Name Clutch', '', 'Weaved clutch with dual coloured stripe down the middle. Customizable with any word', 32, '6273e6fb15e06.jpg', 'Blue and white', 9, 0),
-(1240, 'Beaded Bracelet', '', 'Faceted beaded bracelet', 4, '6273e75843777.jpg', 'red', 13, 0),
-(1241, 'Beach Hat', '', 'Beach hat, customizable with any name', 23, '6273e792e76d8.jpg', 'black', 0, 0),
-(1242, 'Bracelet stack', '', 'Three bracelets, first with flat beads and a letter, second with round beads and both an evil eye and a letter, last one with flat beads and a name', 15, '6273e7cda82fa.jpg', 'blue and white', 15, 0);
+(1238, 'Stacked Necklaces', '', 'Three stackable necklaces: A small beaded necklace, a chain and an evil eye chain', 27.50, '6273e67a534b0.jpg', 'Golden', 3, 0),
+(1239, 'Name Clutch', '', 'Weaved clutch with dual coloured stripe down the middle. Customizable with any word', 32.00, '6273e6fb15e06.jpg', 'Blue and white', 9, 0),
+(1240, 'Beaded Bracelet', '', 'Faceted beaded bracelet', 4.00, '6273e75843777.jpg', 'red', 13, 0),
+(1241, 'Beach Hat', '', 'Beach hat, customizable with any name', 23.00, '6273e792e76d8.jpg', 'black', 0, 0),
+(1242, 'Bracelet stack', '', 'Three bracelets, first with flat beads and a letter, second with round beads and both an evil eye and a letter, last one with flat beads and a name', 15.00, '6273e7cda82fa.jpg', 'blue and white', 15, 0);
 
 -- --------------------------------------------------------
 
@@ -148,17 +168,17 @@ CREATE TABLE `user` (
   `fname` varchar(30) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `address_id` int(5) DEFAULT NULL,
-  `promotions` tinyint(1) NOT NULL
+  `promotions` tinyint(1) NOT NULL,
+  `cart_id` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`) VALUES
-(1, 'leen.touch1@gmail.com', '$2y$10$g7epNda/PGnowcRAEIh.qOlya1dA07rIAEPiyk19bLuA.K883gT0.', 'Leen', 'Antoun', NULL, 1),
-(4, 'kerian@loerick.com', '$2y$10$fWbual2Kgqtv.nI9IPmZAeGDNPR9nhm/3TYZn00U60AX1uC4nqEeO', 'Kerian', 'L', NULL, 0),
-(5, 'k@l.com', '$2y$10$JrRkLzwMsuo/BTHUIXsQ9uPtKNTqxXgu0vEur8Ot2jbfWpQCtANAS', 'k', 'lo', NULL, 0);
+INSERT INTO `user` (`user_id`, `email`, `password`, `fname`, `lname`, `address_id`, `promotions`, `cart_id`) VALUES
+(1, 'leen.touch1@gmail.com', '$2y$10$g7epNda/PGnowcRAEIh.qOlya1dA07rIAEPiyk19bLuA.K883gT0.', 'Leen', 'Antoun', NULL, 1, NULL),
+(4, 'kerian@loerick.com', '$2y$10$fWbual2Kgqtv.nI9IPmZAeGDNPR9nhm/3TYZn00U60AX1uC4nqEeO', 'Kerian', 'L', NULL, 0, NULL);
 
 --
 -- Indexes for dumped tables
@@ -217,7 +237,8 @@ ALTER TABLE `products`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
-  ADD KEY `FK_ADDRESS_ID` (`address_id`);
+  ADD KEY `FK_ADDRESS_ID` (`address_id`),
+  ADD KEY `FK_CART_ID` (`cart_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -245,13 +266,13 @@ ALTER TABLE `customization`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(7) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_details_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -294,7 +315,8 @@ ALTER TABLE `order_details`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `FK_ADDRESS_ID` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`);
+  ADD CONSTRAINT `FK_ADDRESS_ID` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`),
+  ADD CONSTRAINT `FK_CART_ID` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

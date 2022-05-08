@@ -18,12 +18,13 @@ class Login extends Controller
                 $hashed_pass = $user->password;
                 $password = $_POST['password'];
                 if(password_verify($password,$hashed_pass)){
-                    //echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/">';
+                    // echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/">';
                     $this->createSession($user);
                     $data = [
                         'msg' => "Welcome, $user->fname!",
                     ];
                     $this->view('Home/home',$data);
+                    echo '<meta http-equiv="Refresh" content="0.1; url=/LeensTouch/Home/home">';
                 }
                 else{
                     $data = [
@@ -38,7 +39,7 @@ class Login extends Controller
                 ];
                 $this->view('Login/index',$data);
             }
-            if($_SESSION['user_id'] == 1){
+            if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == 1){
                 $_SESSION['adminSession'] = true;
             }
         }

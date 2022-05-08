@@ -29,6 +29,20 @@
             return $this->db->getSingle();
         }
 
+        public function editCustomization($data, $id){
+            $this->db->query("UPDATE customization SET text=:text, image=:image WHERE custom_id=:custom_id");
+            $this->db->bind(':custom_id', $id);
+            $this->db->bind(':text', $data['text']);
+            $this->db->bind(':image', $data['image']);
+            
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
         public function addToCart($item, $picture){
             $this->db->query("INSERT INTO cart (upc, total_price, custom_id, quantity, user_id) 
             values (:upc, :total_price, :custom_id, :quantity, :user_id)");

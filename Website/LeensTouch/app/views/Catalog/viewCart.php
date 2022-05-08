@@ -33,7 +33,7 @@
         display: none;
     <?php }else{ ?>
         margin: auto;
-        width: 10%;
+        width: 12%;
         padding: 10px;
     <?php } ?>
 }
@@ -73,7 +73,7 @@
                         <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
                             <!-- <input type="submit" value="Remove" name="remove" style="margin-right: 20px;" onclick=""> -->
                             <a class="btn btn-secondary btn-sm" href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
-                            <input class="btn btn-secondary" type="submit" value="Edit" name="edit">
+                            <a class="btn btn-secondary" href="/LeensTouch/Catalog/editPersonalization/<?=$item['custom_id']?>" name="edit">Edit</a>
                             <button style="margin-top: 10px;" class="btn btn-secondary" type="submit" name="update">Update</button>
                         </div>
                     </div>
@@ -85,7 +85,6 @@
                     <select name="dropdown[0][quantity]" class="form-select form-select-sm" aria-label=".form-select-sm example" style="width:60px">
                         <?php $count = 1; for ($i=0; $i < $item['itemquantity']; $i++) {?>
                             <option <?php if($count == $item['quantity']){ ?> selected <?php } ?> value="<?=$count?>"><?=$count?></option>
-                            <!-- <option <?php if (isset($_POST['dropdown'])) { if($_POST['dropdown'] == 'CAD'){ ?> selected="true" <?php } } elseif ($_SESSION['API'] == 'CAD') { ?> selected="true" <?php } ?> value="CAD">CAD</option> -->
                         <?php $count++; } ?>
                     </select>
                     <p style="margin-top: 10px; font-size: 13px; width: 50%;">
@@ -117,8 +116,8 @@
 </div>
 
 <div class="emptyMessage">
-        <span class="text">Your cart is Empty</span>
-        <a href="/LeensTouch/Catalog/catalog" style="margin-top:10px;">Continue Shopping</a>
+    <span class="text">Your cart is Empty</span>
+    <a href="/LeensTouch/Catalog/catalog" style="margin-top:10px;">Continue Shopping</a>
 </div>
 
 

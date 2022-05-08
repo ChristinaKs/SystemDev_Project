@@ -23,7 +23,6 @@
                     "products" => $products
                 ];
                 $this->view('AdminProducts/getProducts',$data);
-
             }
         }
 

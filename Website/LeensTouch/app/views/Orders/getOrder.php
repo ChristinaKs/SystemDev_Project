@@ -47,7 +47,6 @@
         echo"<td>$d->unit_price</td>";
         echo"<td>$d->custom_text</td>";
         echo"<td>$d->custom_image</td>";
-        // echo"</td>";
         echo"</tr>";
       }
     ?>

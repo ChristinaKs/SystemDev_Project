@@ -1,5 +1,4 @@
-<?php require APPROOT . '/views/includes/header.php'; 
-?>
+<?php require APPROOT . '/views/includes/header.php'; ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="mynavbar">
@@ -24,35 +23,37 @@
   <h1>All Orders</h1>
 </div>
 
-<div class="orderTable table-bordered" style="margin: 75px; border: 1px solid black;">
-  <tr>
-    <td>Order ID</td>
-    <td>Client ID</td>
-    <td>Order Status</td>
-    <td>Total Price</td>
-    <td>View Details</td>
-  </tr>
-  <?php
-    $totalPrice = 0;
-    foreach($data["orders"] as $orders){
-      echo"<tr>";
-      echo"<td>$orders->order_id</td>";
-      echo"<td>$orders->user_id</td>";
-      echo"<td>
-        <form action='/LeensTouch/Orders/updateOrderStatus/$orders->order_id' method='post'> 
-        <input type='checkbox' name='OrderStatusCB' onChange='this.form.submit()'";
-      if($orders->status == 'Shipped'){
-        echo "checked";
+<div class="details" style="margin: 75px;">
+  <table class="table table-bordered" style="border: 1px solid black;">
+    <tr>
+      <td>Order ID</td>
+      <td>Client ID</td>
+      <td>Order Status</td>
+      <td>Total Price</td>
+      <td>View Details</td>
+    </tr>
+    <?php
+      $totalPrice = 0;
+      foreach($data["orders"] as $orders){
+        echo"<tr>";
+        echo"<td>$orders->order_id</td>";
+        echo"<td>$orders->user_id</td>";
+        echo"<td>
+          <form action='/LeensTouch/Orders/updateOrderStatus/$orders->order_id' method='post'> 
+          <input type='checkbox' name='OrderStatusCB' onChange='this.form.submit()'";
+        if($orders->status == 'Shipped'){
+          echo "checked";
+        }
+        echo "> Shipped
+          </form>
+          </td>";
+        echo"<td>$orders->total_price</td>";
+        echo"<td>
+          <a href='/LeensTouch/Orders/getOrder/$orders->order_id'>View Details</a>
+          </td>";
+        echo"</tr>";
       }
-      echo "> Shipped
-        </form>
-        </td>";
-      echo"<td>$orders->total_price</td>";
-      echo"<td>
-        <a href='/LeensTouch/Orders/getOrder/$orders->order_id'>View Details</a>
-        </td>";
-      echo"</tr>";
-    }
-  ?>
+    ?>
+  </table>
 </div>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

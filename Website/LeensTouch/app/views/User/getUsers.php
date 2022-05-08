@@ -20,10 +20,16 @@
   </div>
 </nav>
 
+<!-- <?php
+    echo '<pre>';
+    var_dump($data);
+    echo '</pre>';
+    ?> -->
+
 <div class="title" style="margin-left: 50px; float: left;">
   <h1>My Clients</h1>
 </div> 
-<div class="details" style="margin: 75px; border: 1px solid black;">
+<div class="details" style="margin: 75px;">
   <table  class="table table-bordered" style="border: 1px solid black;">
     <tr>
       <td>User ID</td>
@@ -33,27 +39,27 @@
       <td>Promotions</td>
     </tr>
     <?php
+    $count=0;
       foreach($data["users"] as $users){
         echo"<tr>";
-        echo"<td>$data->user_id</td>";
-        echo"<td>$data->email</td>";
-        echo"<td>$data->fname</td>";
-        echo"<td>$data->lname</td>";
-        echo"<td>
-          if($data->promotions == '1'){
+        echo"<td>$users->user_id</td>";
+        echo"<td>$users->email</td>";
+        echo"<td>$users->fname</td>";
+        echo"<td>$users->lname</td>";
+        echo"<td>";
+          if($users->promotions == '1'){
             echo 'Yes';
           } else {
-            echo 'No';";
-        echo"> 
+            echo 'No';
+        echo"
           </form>
           </td>";
-        // echo"</td>";
         echo"</tr>";
       }
+    }
     ?>
   </table>
 </div>
-  ?>
 
 
    

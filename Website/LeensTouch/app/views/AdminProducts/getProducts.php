@@ -73,7 +73,7 @@
       echo '
         <div class="product-card">
           <div class=" product-image"">
-            <img class="img-thumbnail" src="'.URLROOT.'/public/img/'.$product->image.'" width="320" height="320">
+          <input type="image" id="image" src="'.URLROOT.'/public/img/'.$product->image.'" class="product-thumb" alt="" > 
           </div>
           <div class=" product-info">
             <h5 class="product-brand">Name: '.$product->product_name.'</h2>
@@ -94,7 +94,7 @@
 <button id = "loadMore" type="button" class="btn btn-primary btn-lg rounded-3 mx-auto mb-5" style="display: block; background-color:#e4c5bd; border: 1px solid #000000; color: #000000; ">
         Load More</button>
         
-   <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 <script src ="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
 <script>
   $(document).ready(function () {

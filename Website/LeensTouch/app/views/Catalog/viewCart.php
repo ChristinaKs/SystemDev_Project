@@ -69,7 +69,7 @@
             <div class="row">
                 <div class="column-1">
                     <div class="image">
-                        <img src="<?= URLROOT.$item['image'] ?>" alt="image" width="140" height="140">
+                        <img src="<?= URLROOT.'/public/img/'.$item['image'] ?>" alt="image" width="140" height="140">
                         <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
                             <!-- <input type="submit" value="Remove" name="remove" style="margin-right: 20px;" onclick=""> -->
                             <a class="btn btn-secondary btn-sm" href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>

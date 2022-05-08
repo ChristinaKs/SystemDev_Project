@@ -10,8 +10,11 @@
           <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/LeensTouch/Users/getUsers">My Clients</a>
-      </li>
+          <a class="nav-link" href="/LeensTouch/Orders/getOrders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/User/getUsers">My Clients</a>
+        </li>
       </ul>
     </div>
   </nav>

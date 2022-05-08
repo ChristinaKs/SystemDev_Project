@@ -26,7 +26,7 @@
   <h1>Order Details</h1>
 </div>
 
-<div class="details" style="margin: 75px; border: 1px solid black;">
+<div class="details" style="margin: 75px;">
   <table  class="table table-bordered" style="border: 1px solid black;">
     <tr>
       <td>Order ID</td>

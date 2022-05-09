@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
+<?php if (isAdminLoggedIn()) { ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
@@ -17,6 +18,8 @@
       </ul>
     </div>
   </nav>
+<?php } ?>
+
 <!-- <div class="container"> -->
 <h1>Contact Us</h1>
 <!-- <form>

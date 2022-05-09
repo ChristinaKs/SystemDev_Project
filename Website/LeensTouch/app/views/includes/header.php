@@ -30,7 +30,7 @@
 <body>
 <div class="container-fluid ps-0 pe-0 " >
 
-<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-3 pb-0  " style="padding: 0px;background-color:#b2b4bfad!important; ">
+<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-3 pb-0  " style="padding: 0px; background-color:#CBCCD4!important; ">
   <div class="container-fluid " >
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
@@ -96,14 +96,14 @@
 </nav>
 
 
-<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-1" style="padding: 0px;padding-bottom: 10px; background-color:#b2b4bfad!important; ">
+<nav class="navbar navbar-expand-sm navbar-light bg-secondary pt-1" style="padding: 0px;padding-bottom: 10px; background-color:#CBCCD4!important; ">
   <ul style="margin: auto; height: 50px; text-align: center;" class="nav navbar-nav navbar-right">
   
   <a class="nav-link pt-0 text-center" href="/LeensTouch/Home"><p  style="font-size: 40px; font-family:'LucidaCalligraphy-Italic'; color: #000000;"><em><?php echo SITENAME; ?></em></p></a>
   </ul>
 </nav>
 
-<nav class=" navbar navbar-expand-sm navbar-light bg-secondary h5 p-0 pt-2 mb-0 " style="color: #000000!important; background-color:#b2b4bfad!important; ">
+<nav class=" navbar navbar-expand-sm navbar-light bg-secondary h5 p-0 pt-2 mb-0 " style="color: #000000!important; background-color:#CBCCD4!important; ">
   <div class="collapse navbar-collapse" id="mynavbar">
     <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
       <li class="nav-item me-3 ps-4  pe-1">

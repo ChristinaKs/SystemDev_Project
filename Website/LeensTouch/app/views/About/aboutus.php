@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
+
 <?php if (isAdminLoggedIn()) { ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="mynavbar">
@@ -20,26 +21,30 @@
   </nav>
 <?php } ?>
 
-<body style="background-color: #e4c5bd">
-  <div class="about-section" style="background-color: white; max-width: 1200px; height: 100%; margin: auto;">
-    <div class="about-subsection" style="margin-left: 100px; margin-right: 100px; text-align: justify;">
-      <br>
-      <h1>About Leen's Touch</h1>
-      <?php
-        foreach($data["about"] as $about){
-          echo "&emsp;&emsp;";
-          echo $about->first_paragraph;
-          echo "<br><br>&emsp;&emsp;";
-          echo $about->second_paragraph;
-          echo "<br><br>&emsp;&emsp;";
-          echo $about->third_paragraph;
-        } 
-        echo "<br><br>";
-        if (isAdminLoggedIn()) {
-          echo "<button id='editAbout' name='edit' class='btn btn-secondary' style='background-color: #e4c5bd'> <a href='/LeensTouch/About/editAbout' style='text-decoration: none; color: white;'>edit </a></button>";
-        }?>
-      </div>
+<body style="background-color: #e4c5bd; height: 100%">
+  <div class= "container-fluid ">
+    <div class="container" style="background-color: white; max-width:50%; min-height:42.8rem; margin: auto;">
+      <div class="" style="margin-left: 10%; margin-right: 10%; text-align: justify;">
+        <br>
+        <h1 class = "text-center mb-5">About Leen's Touch</h1>
+        <?php
+          foreach($data["about"] as $about){
+            echo "&emsp;&emsp;";
+            echo $about->first_paragraph;
+            echo "<br><br>&emsp;&emsp;";
+            echo $about->second_paragraph;
+            echo "<br><br>&emsp;&emsp;";
+            echo $about->third_paragraph;
+          }
+          echo "<br><br>";
+          if (isAdminLoggedIn()) {
+              echo "<button id='editAbout' name='edit' class='btn btn-secondary' style='background-color: #e4c5bd'> <a href='/LeensTouch/About/editAbout' style='text-decoration: none; color: white;'>edit </a></button>";
+          } ?>
+        
+    </div>
+    
   </div>
+  
 </body>
   
 <?php require APPROOT . '/views/includes/footer.php'; ?>

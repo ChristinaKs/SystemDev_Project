@@ -29,6 +29,17 @@
             return $this->db->getSingle();
         }
 
+        public function clearCart(){
+            $this->db->query("DELETE FROM cart WHERE user_id=:user_id");
+            $this->db->bind('user_id', $_SESSION['user_id']);
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        
         public function editCustomization($data, $id){
             $this->db->query("UPDATE customization SET text=:text, image=:image WHERE custom_id=:custom_id");
             $this->db->bind(':custom_id', $id);

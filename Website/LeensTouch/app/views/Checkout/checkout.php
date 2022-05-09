@@ -1,4 +1,5 @@
 <?php require APPROOT . '/views/includes/header.php';  ?>
+<?php $subtotal = substr($_SERVER["REQUEST_URI"],strrpos($_SERVER["REQUEST_URI"],"/")+1);  ?>
     <div class="container-flex">
     <div class="col-lg-12 mt-4 text-center">
                         <h1 class="display-6">Payment Form</h1>
@@ -9,7 +10,7 @@
                     <tbody class="text-center ">
                         <tr >
                             <td class="lead">Subtotal</td>
-                            <?php echo '<td class="lead">$'.number_format(intval($data), 2, '.', ' ').'</td>'?>
+                            <?php echo '<td class="lead">$'.number_format(intval($subtotal), 2, '.', ' ').'</td>'?>
                         </tr>
                         <tr class="border-dark border-bottom "> 
                              <td class="lead pt-3 pb-5">Shipping</td>
@@ -17,7 +18,7 @@
                         </tr>
                         <tr>
                             <th class="h3 pt-5">Total</th>
-                            <?php echo '<th class="h3 pt-5">$'.number_format((intval($data)+15), 2, '.', ' ').'</th>'?>
+                            <?php echo '<th class="h3 pt-5">$'.number_format((intval($subtotal)+15), 2, '.', ' ').'</th>'?>
                             
                         </tr>
                     </tbody>

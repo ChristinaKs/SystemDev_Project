@@ -85,35 +85,40 @@
 
 <?php $total = 0; foreach ($data as $item){ ?>
     <form action="" method="post">
-        <div class="item">
-            <div class="row">
-                <div class="column-1">
+        <div class="item pt-3">
+            <div class="row ">
+                <div class="col-1"></div>
+                <div class="col-xl-3">
                     <div class="image">
-                    <img src="<?= URLROOT.'/public/img/'.$item['image'] ?>" alt="image" width="140" height="140">
-                        <div class="buttons" style="margin-top: 10px; margin-bottom: 10px;">
+                    <img src="<?= URLROOT.'/public/img/'.$item['image'] ?>" alt="image" width="250" height="250">
+                        <div class="buttons mt-2 mb-2 w-75 " >
                             <!-- <input type="submit" value="Remove" name="remove" style="margin-right: 20px;" onclick=""> -->
-                            <a class="btn btn-secondary btn-sm" href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
-                            <a class="btn btn-secondary" href="/LeensTouch/Catalog/editPersonalization/<?=$item['custom_id']?>" name="edit">Edit</a>
-                            <button style="margin-top: 10px;" class="btn btn-secondary" type="submit" name="update">Update</button>
+                            <a class="text-decoration-none text-dark fw-bold fs-5 pe-4" href="viewCart?remove=<?=$item['cart_id']?>" name="remove" class="remove">Remove</a>
+                            <a class="text-decoration-none text-dark fw-bold fs-5 pe-4" href="/LeensTouch/Catalog/editPersonalization/<?=$item['custom_id']?>" name="edit">Edit</a>
+                            <button class="text-decoration-none text-dark fw-bold fs-5" style="border: none; background: none;"type="submit" name="update"> Update</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="column-2">
-                    <h5><?= $item['name']?></h5>
-                    <input style="display: none;" hidden type='number' name='dropdown[0][cart_id]' value="<?=$item['cart_id']?>"/>
-                    <select name="dropdown[0][quantity]" class="form-select form-select-sm" aria-label=".form-select-sm example" style="width:60px">
+                <div class="col-xl-7">
+                    <h5 class="fw-bold fs-3"><?= $item['name']?></h5>
+                    <input class=" "  style="display: none;" hidden type='number' name='dropdown[0][cart_id]' value="<?=$item['cart_id']?>"/>
+                    <select name="dropdown[0][quantity]" class="form-select form-select-sm fs-6" aria-label=".form-select-sm example" style="width:60px">
                         <?php $count = 1; for ($i=0; $i < $item['itemquantity']; $i++) {?>
                             <option <?php if($count == $item['quantity']){ ?> selected <?php } ?> value="<?=$count?>"><?=$count?></option>
                         <?php $count++; } ?>
                     </select>
-                    <p style="margin-top: 10px; font-size: 13px; width: 50%;">
+                    <p class="fs-6 w-75 mt-3" >
                         Personalizations: <br> 
                         <?=$item['custom']['0']['text']?>
                     </p>
                 </div>
-                <div class="column-3">
-                    <h5><?php echo $item['total_price'] * $item['quantity']; $total += $item['total_price'] * $item['quantity']?>$</h5>
+                <div class="col-xl-1">
+                    <?php $totale =  $item['total_price'] * $item['quantity']; $total += $item['total_price'] * $item['quantity'];
+                    echo ' <div class="fw-bold fs-3"> '.(number_format($totale, 2, ',', ' ')).'$</div>'
+                    ?>
+                 
+               
                 </div>
             </div>
         </div>
@@ -121,9 +126,9 @@
     <hr>
 <?php } ?>
 
-<div class="checkout">
-    <span class="text">Subtotal</span>
-    <span class="price">&dollar;
+<div class="checkout float-end me-5 pb-3">
+    <span class="text fs-5">Subtotal</span>
+    <span class="price fs-5">&dollar;
         <?php
             // $price = 0;
             // foreach ($data as $item) {
@@ -132,7 +137,7 @@
             echo $total;
         ?>
     </span>
-    <a class="btn btn-secondary" href="/LeensTouch/Checkout/index/<?=$total?>">Checkout</a>
+    <a class="ms-3 btn btn-secondary fs-5" href="/LeensTouch/Checkout/index/<?=$total?>">Checkout</a>
 </div>
 
 <div class="emptyMessage">

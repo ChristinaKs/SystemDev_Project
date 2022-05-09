@@ -5,7 +5,9 @@
 <?php
 $about = $data[0];
 ?> 
-    <h1>About Gemarius Edit Page</h1>
+<div class="Title" style="margin-left: 75px">
+    <h1>About Leen's Touch Edit Page</h1>
+</div>
     
     <form action='' method='post' enctype="multipart/form-data">
 

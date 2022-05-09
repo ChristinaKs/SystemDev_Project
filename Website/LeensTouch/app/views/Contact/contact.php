@@ -21,7 +21,7 @@
 <?php } ?>
 
 <!-- <div class="container"> -->
-<h1>Contact Us</h1>
+
 <!-- <form>
   <div class="float-container">
     <div class="form-group" style="width: 50%; float: left;">
@@ -72,84 +72,98 @@
 
 </style>
 
+<body style="background-color: #e4c5bd; height: 100%">
+  <div class= "container-fluid ">
+    <div class="container" style="background-color: white; max-width:50%; min-height:47rem; margin: auto;">
+      <div class="" style="margin-left: 10%; margin-right: 10%; text-align: justify;">
+        <br>
+            <h1 class = "text-center">Contact Us</h1>
+            <p class = "text-center" >Use this form to contact us</p>
+              <div class="modal-body border-0 p-4 position-relative" >
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * Contact Form * *-->
 
-<div class="modal-body border-0 p-4">
-  <!-- * * * * * * * * * * * * * * *-->
-  <!-- * * Contact Form * *-->
+                <form  id="contactForm" action="https://formspree.io/f/myyolyyk" method="POST" data-sb-form-api-token="API_TOKEN">
 
-  <form id="contactForm" action="https://formspree.io/f/myyolyyk" method="POST" data-sb-form-api-token="API_TOKEN">
+                  <!-- fName input-->
+                  <div class="form-floating mb-3">
+                    <input class="form-control" name="fname" id="fname" type="text" placeholder="Enter your first name..." data-sb-validations="required" required="">
+                    <label for="fname">First Name</label>
+                    <div class="invalid-feedback" data-sb-feedback="first name:required">A first name is required.</div>
+                  </div>
 
-    <!-- fName input-->
-    <div class="form-floating mb-3">
-      <input class="form-control" name="fname" id="fname" type="text" placeholder="Enter your first name..." data-sb-validations="required" required="">
-      <label for="fname">First Name</label>
-      <div class="invalid-feedback" data-sb-feedback="first name:required">A first name is required.</div>
-    </div>
+                  <!-- lName input-->
+                  <div class="form-floating mb-3">
+                    <input class="form-control" name="lname" id="lname" type="text" placeholder="Enter your last name..." data-sb-validations="required" required="">
+                    <label for="lname">Last Name</label>
+                    <div class="invalid-feedback" data-sb-feedback="last name:required">A last name is required.</div>
+                  </div>
 
-    <!-- lName input-->
-    <div class="form-floating mb-3">
-      <input class="form-control" name="lname" id="lname" type="text" placeholder="Enter your last name..." data-sb-validations="required" required="">
-      <label for="lname">Last Name</label>
-      <div class="invalid-feedback" data-sb-feedback="last name:required">A last name is required.</div>
-    </div>
+                  <!-- Email address input-->
+                  <div class="form-floating mb-3">
+                    <input class="form-control" name="_replyto" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required="">
+                    <label for="email">Email address</label>
+                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                  </div>
 
-    <!-- Email address input-->
-    <div class="form-floating mb-3">
-      <input class="form-control" name="_replyto" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required="">
-      <label for="email">Email address</label>
-      <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-      <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-    </div>
+                  <!-- Message input-->
+                  <div class="form-floating mb-3">
+                    <textarea class="form-control" name="message" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required=""></textarea>
+                    <label for="message">Message</label>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                  </div>
 
-    <!-- Message input-->
-    <div class="form-floating mb-3">
-      <textarea class="form-control" name="message" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required" required=""></textarea>
-      <label for="message">Message</label>
-      <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-    </div>
+                  <!-- File input-->
+                  <div style="display: none;" class="form-floating mb-3">
+                    <input class="form-control" name="image" id="image" type="text" value="<?=$data['image']?>">
+                  </div>
 
-    <!-- File input-->
-    <div style="display: none;" class="form-floating mb-3">
-      <input class="form-control" name="image" id="image" type="text" value="<?=$data['image']?>">
-    </div>
+                  <span class="success" id="success">
+                    <span>Image set!</span>
+                  </span>
 
-    <div class="success" id="success">
-      <p>Image set!</p>
-    </div>
+                  <!-- Submit success message-->
+                  <!---->
+                  <!-- This is what your users will see when the form-->
+                  <!-- has successfully submitted-->
+                  <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">
+                      <div class="fw-bolder">Form submission successful!</div>
+                    </div>
+                  </div>
 
-    <!-- Submit success message-->
-    <!---->
-    <!-- This is what your users will see when the form-->
-    <!-- has successfully submitted-->
-    <div class="d-none" id="submitSuccessMessage">
-      <div class="text-center mb-3">
-        <div class="fw-bolder">Form submission successful!</div>
+                  <!-- Submit error message-->
+                  <!---->
+                  <!-- This is what your users will see when there is-->
+                  <!-- an error submitting the form-->
+                  <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                  </div>
+
+                  <!-- Cancel Button -->
+                  <div class=" position-absolute  top-100 end-0">
+                    <a style="width:6em; margin-top: -3rem; margin-right:10rem;" href="/LeensTouch/Contact" class=" position-absolute  top-100 end-0 float-end  btn btn-secondary rounded-pill btn-lg">Cancel</a>
+                  <!-- Submit Button-->
+                    <button style=" width:6em; margin-top: 3rem; margin-left: 35rem;" class=" btn btn-secondary rounded-pill btn-lg" id="submitButton" type="submit">Send</button>
+              
+                  </div>
+                    </form>
+
+                <form class="position-absolute top-100 start-0"action="" method="POST" enctype="multipart/form-data">
+                  <div class="form-floating mb-3">
+                    <p>Your Image:</p>
+                    <input style="width:100%" type="file" name="picture">
+                    <button class="btn btn-secondary rounded-pill btn-sm mt-1" name="push" id="submitButton" type="submit">Upload Image</button>
+                  </div>
+                   </form>
+
+                <!-- <div class="text-center"><br>
+                  Or you can email me directly at <a href="mailto:&ZeroWidthSpace;leen.touch1@gmail.com">leen.touch1@gmail.com</a>
+                </div> -->
+              
+        </div>
       </div>
     </div>
-
-    <!-- Submit error message-->
-    <!---->
-    <!-- This is what your users will see when there is-->
-    <!-- an error submitting the form-->
-    <div class="d-none" id="submitErrorMessage">
-      <div class="text-center text-danger mb-3">Error sending message!</div>
-    </div>
-
-    <!-- Submit Button-->
-    <button style="position: absolute; margin-top: 120px" class="btn btn-secondary rounded-pill btn-lg" id="submitButton" type="submit">Submit</button>
-  </form>
-
-  <form action="" method="POST" enctype="multipart/form-data">
-    <div class="form-floating mb-3">
-      <p>Your Image:</p>
-      <input style="width:100%" type="file" name="picture">
-      <button class="btn btn-secondary rounded-pill btn-sm" name="push" id="submitButton" type="submit">Set image</button>
-    </div>
-  </form>
-
-  <div class="text-center"><br>
-    Or you can email me directly at <a href="mailto:&ZeroWidthSpace;leen.touch1@gmail.com">leen.touch1@gmail.com</a>
-  </div>
-</div>
-
+  </body>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

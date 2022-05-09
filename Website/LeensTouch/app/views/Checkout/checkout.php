@@ -75,8 +75,8 @@
                                             </div> -->
                                           
                                     <h6 class="pb-2"> Credit Card - Secure Payement</h6>
-                                     <p> <button type="submit" id="checkout-button" class="subscribe btn btn-primary btn-block shadow-sm"> Pay with Stripe </button> </p>
-                                    <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment on Stripe. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+                                     <p> <button type="submit" id="checkout-button" class="subscribe btn btn-primary btn-block shadow-sm"> Pay with Credit </button> </p>
+                                    <p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
                               
 
                                             <div class="card-footer"> 

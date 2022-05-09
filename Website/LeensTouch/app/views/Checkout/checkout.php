@@ -9,7 +9,7 @@
                     <tbody class="text-center ">
                         <tr >
                             <td class="lead">Subtotal</td>
-                            <?php echo '<td class="lead">$'.number_format($data, 2, '.', ' ').'</td>'?>
+                            <?php echo '<td class="lead">$'.number_format(intval($data), 2, '.', ' ').'</td>'?>
                         </tr>
                         <tr class="border-dark border-bottom "> 
                              <td class="lead pt-3 pb-5">Shipping</td>

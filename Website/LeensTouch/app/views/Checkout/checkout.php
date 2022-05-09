@@ -48,7 +48,7 @@
                                     <!-- credit card info-->
                                     <div id="credit-card" class="tab-pane fade show active pt-3">
                                         <!-- onsubmit="event.preventDefault()" -->
-                                        <form role="form" action="<?= URLROOT ?>/Checkout-Session/" method="POST">
+                                        <form role="form" action="<?= URLROOT ?>/Checkout/placeOrder" method="POST">
                                             <!-- <div class="form-group"> <label for="username">
                                                     <h6>Card Owner</h6>
                                                 </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>

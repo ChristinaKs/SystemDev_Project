@@ -62,5 +62,10 @@
             
             $this->view('Checkout/checkout',$data);
         }
+
+        public function placeOrder(){
+            header('location:/LeensTouch/Catalog/viewCart?status=success');
+            echo '<meta http-equiv="Refresh" content="0; url=/LeensTouch/Catalog/viewCart">';
+        }
     }
 ?>

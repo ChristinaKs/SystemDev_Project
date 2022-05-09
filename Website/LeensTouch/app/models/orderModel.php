@@ -3,6 +3,46 @@
         public function __construct(){
             $this->db = new Model;
         }
+        
+        public function createOrder($userId, $total){
+            $this->db->query("INSERT INTO orders (user_id, status, total_price) VALUES (:user_id, :status , :total_price )");
+            $this->db->bind('user_id', $userId);
+            $this->db->bind('status', "shipped");
+            $this->db->bind('total_price', $total);
+
+            
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function createOrderDetails($order_id, $upc, $product_name, $quantity, $unit_price, $custom_text, $custom_image){
+            $this->db->query("INSERT INTO order_details (order_id, upc, product_name, quantity, unit_price, custom_text, custom_image)
+             VALUES (:order_id, :upc, :product_name, :quantity, :price, :custom_text, :custom_image)");
+            $this->db->bind(':order_id', $order_id);
+            $this->db->bind(':upc', $upc);
+            $this->db->bind(':product_name', $product_name);
+            $this->db->bind(':quantity', $quantity);
+            $this->db->bind(':price', $unit_price);
+            $this->db->bind(':custom_image', $custom_image);
+            $this->db->bind(':custom_text', $custom_text);
+           
+            if($this->db->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function getOrderId(){
+            $this->db->query("SELECT order_id FROM orders WHERE user_id = :user");
+            $this->db->bind('user', $_SESSION['user_id']);
+            return $this->db->getResultSet();
+        }
 
         public function getOrders(){
             $this->db->query("SELECT * FROM orders");
@@ -21,19 +61,19 @@
             return $this->db->getResultSet();
         }
 
-        public function createOrder($data){
-            $this->db->query("INSERT INTO orders (user_id, status, total_price) values (:user_id, :status, :total_price)");
-            $this->db->bind(':user_id', $data['user_id']);
-            $this->db->bind(':status',$data['status']);
-            $this->db->bind(':total_price',$data['total_price']);
+//         public function createOrder($data){
+//             $this->db->query("INSERT INTO orders (user_id, status, total_price) values (:user_id, :status, :total_price)");
+//             $this->db->bind(':user_id', $data['user_id']);
+//             $this->db->bind(':status',$data['status']);
+//             $this->db->bind(':total_price',$data['total_price']);
 
-            if($this->db->execute()){
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
+//             if($this->db->execute()){
+//                 return true;
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
 
         public function updateOrderStatus($data){
             $this->db->query("UPDATE orders SET status=:status WHERE order_id=:order_id");

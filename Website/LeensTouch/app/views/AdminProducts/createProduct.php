@@ -21,10 +21,12 @@
 </nav>
   
 <br>
-<div class="title" style="margin-left: 50px; float: left;">
-  <h1>Create a Product</h1>
-</div>
-<br><br>
+
+<div class="container w-100 mx-auto" style="padding-left: 23rem">
+  <div class="title" style="margin-left: 150px; float: left;">
+    <h1>Create a Product</h1>
+  </div>
+  <br><br>
     
     <!-- <form action='' method='post' enctype="multipart/form-data">
 
@@ -58,7 +60,7 @@
   </form> -->
 
   <form action='' method='post' enctype="multipart/form-data">
-    <div class="product-image mt-0">
+    <div class="product-image mt-0 ms-5">
       <div class="ms-5 mb-3 mt-5"><span class="h5 ">Product Picture:</span><br> 
         <div class="form-group" style="margin: auto; float: left;">
           <input type='file' name='image' class='form-control'  style="width: 400px;"/>
@@ -98,12 +100,13 @@
           </div>
         </div> <br>
           
-        <div class="form-group" style=" margin-left: 100px; float: left">
-          <button type="submit" name='register' class="btn btn-primary" style="background-color: #e4c5bd; color: white;">Register</button>
+        <div class="form-group" style=" margin-left: 30rem; float: left">
+        <button id='cancel' name='cancel' class='btn btn-secondary me-3'> <a href='/LeensTouch/AdminProducts/createProduct' style='text-decoration: none; color: white;'>Cancel </a></button>
+          <button type="submit" name='register' class="btn btn-secondary">Add to Catalog</button>
         </div>  
 
       </div>
     </div>
   </form>
-   
+  </div>
 <?php require APPROOT . '/views/includes/footer.php'; ?>

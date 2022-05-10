@@ -84,7 +84,7 @@
               ).'
               
             </div>
-            <a class="mt-2 btn btn-secondary"href="/LeensTouch/AdminProducts/update/'.$product->upc.'"> Update</a>
+            <a class="mt-2 btn btn-secondary"href="/LeensTouch/AdminProducts/update/'.$product->upc.'"> Edit</a>
             <a class="mt-2 btn btn-danger" style="float: right;" href="/LeensTouch/AdminProducts/delete/'.$product->upc.'"> Delete</a>
           </div>  
       ';

@@ -37,7 +37,7 @@
             }
 
             else if(isset($_POST['search']) && $_POST['search_type'] == "sortLowest"){
-                $isSucc = $this->searchModel->sortPriceLowest();
+                $isSucc = $this->searchModel->sortByPriceLowest();
                 $data1 = [
                     "products" => $isSucc
                 ];
@@ -45,7 +45,7 @@
             }
 
             else if(isset($_POST['search']) && $_POST['search_type'] == "sortHighest"){
-                $isSucc = $this->searchModel->sortPriceHighest();
+                $isSucc = $this->searchModel->sortByPriceHighest();
                 $data1 = [
                     "products" => $isSucc
                 ];

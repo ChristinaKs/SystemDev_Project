@@ -25,9 +25,9 @@
  body{
  }
 .product-card{
-  height: 450px;
-  width: 300px;
-  margin: 10px 60px;
+  height: 420px;
+  width: 270px;
+  margin: 10px 50px;
   display: none;
   animation: blur .8s ease-out ;
   margin-bottom: 40px
@@ -46,8 +46,8 @@
 }
 
 .product-thumb {
-  height: 300px;
-  width: 300px;
+  height: 270px;
+  width: 270px;
   margin-bottom: 10px;
   border:1px solid black;
 }
@@ -79,12 +79,13 @@
             <h5 class="product-brand">Name: '.$product->product_name.'</h2>
             <div class="price">Price: '.(number_format($product->price, 2, ',', ' ')).'$</div>
               '.(($product->quantity<'1')?'<div class="availability">Sold Out</div><div>&nbsp</div>':
-              '<div class="availability">Available</div> 
-              <a class="card-btn" href="http://">Add to cart</a>'
+              '<div class="availability">Available</div> <br>
+              '
               ).'
+              
             </div>
-            <a href="/LeensTouch/AdminProducts/update/'.$product->upc.'"> Update</a>
-            <a style="float: right;" href="/LeensTouch/AdminProducts/delete/'.$product->upc.'"> Delete</a>
+            <a class="mt-2 btn btn-secondary"href="/LeensTouch/AdminProducts/update/'.$product->upc.'"> Update</a>
+            <a class="mt-2 btn btn-danger" style="float: right;" href="/LeensTouch/AdminProducts/delete/'.$product->upc.'"> Delete</a>
           </div>  
       ';
     }

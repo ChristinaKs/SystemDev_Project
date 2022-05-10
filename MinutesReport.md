@@ -545,3 +545,112 @@ N/A - same as previous meeting
 ## *Eleventh Meeting*
 
 > This meeting was cancelled due to the team leader reporting it a second time
+
+<br><br>
+
+# **Thursday, 7th of April, 2022**
+
+## *Twelvth Meeting*
+
+> This meeting did not have a structure, we simply reassigned tasks and did the Block Diagram
+
+<br><br>
+
+# **12/04/2022**
+
+## *thirteenth Meeting*
+
+> Started at 10:30 // Finished at 10:42
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Split Work | finished | 12 minutes |
+
+<br>
+
+## Decisions
+Order of implementation (order of dependencies):
+Folder formating: All
+header/footer: Kerian
+sign in/sign up: Krikor
+home page: Veaci
+catalog and view product: Veaci
+
+Cart and checkout: Kerian / Krikor
+search features: Krikor
+admin sign in: Christina
+admin add/edit/remove Christina
+about us: Christina
+Contact us: Kerian
+
+Shipping/checkout: Krikor/Veaci
+Product personalization: Kerian
+Sign in / Sign up data validation: Krikor
+Admin orders page: Kerian or Volunteer + Christina
+Admin promotions page: Christina
+Edit account details: Veaci
+
+Timeline:
+Deadline for 50% implementation, 24th April
+Deadline for ~100%  implementation, 6th May
+Report + last minute changes, 10th May
+
+
+
+<br>
+
+## Events
+* Meeting after 50% deadline
+
+<br>
+
+## What's next?
+* Working on Deliverable 07 + coding
+
+<br><br>
+
+# **Sunday, May 8th**
+
+## *thirteenth Meeting*
+
+> Started at 10:20 // Finished at 10:56
+
+<br>
+
+## Attendance
+&emsp;Astour, Krikor<br>
+&emsp;Kallas, Christina<br>
+&emsp;Loerick-Roger, Kerian<br>
+&emsp;Vlas, Veaceslav<br>
+
+<br>
+
+## Task / Activity
+
+| Task | Status | Time |
+| ---- | ------ | ---- |
+| Split Work | finished | 12 minutes |
+| Discuss issues and how to continue | Done | 24 minutes |
+
+<br>
+
+## Decisions
+Quick Meeting before the Presentation
+
+<br>
+
+## What's next?
+* Working on Deliverable 07 + coding
+

@@ -22,8 +22,8 @@
   
 <br>
 
-<div class="container w-100 mx-auto" style="padding-left: 23rem">
-  <div class="title" style="margin-left: 150px; float: left;">
+<div class="container w-100 mx-auto" style="padding-left: 21rem">
+  <div class="title" style="margin-left: 170px; float: left;">
     <h1>Create a Product</h1>
   </div>
   <br><br>
@@ -60,10 +60,10 @@
   </form> -->
 
   <form action='' method='post' enctype="multipart/form-data">
-    <div class="product-image mt-0 ms-5">
+    <div class="product-image mt-0  ms-5">
       <div class="ms-5 mb-3 mt-5"><span class="h5 ">Product Picture:</span><br> 
         <div class="form-group" style="margin: auto; float: left;">
-          <input type='file' name='image' class='form-control'  style="width: 400px;"/>
+          <input type='file' name='image' class='form-control'  style="width: 500px;"/>
         </div>
       </div><br>
     </div>
@@ -72,31 +72,31 @@
     <div class="product-info d-grid ms-5 mt-0">  <!-- <div class="product-info mt-0"> -->
       <div class="ms-5 mb-3 mt-5"><span class="h5 ">Name:</span> <br> 
           <div class="form-group" style="margin: auto; float: left;">
-            <input name="product_name" type="text" class="form-control" id="product_name" placeholder="Name of the product" style="width: 400px;">
+            <input name="product_name" type="text" class="form-control" id="product_name" placeholder="Name of the product" style="width: 500px;">
           </div> 
         </div><br>
 
         <div class="ms-5 mb-3"><span class="h5 ">Price:</span> <br>
           <div class="form-group" style="margin: auto; float: left;">
-            <input name="price" type="text" class="form-control" id="price" placeholder="Price of the product" style="width: 400px;">
+            <input name="price" type="text" class="form-control" id="price" placeholder="Price of the product" style="width: 500px;">
           </div>
         </div><br>
 
         <div class=" ms-5 mb-3 me-5"><span class="h5">Product Description:</span><br>
           <div class="form-group" style=" margin: auto; float: left;">
-            <input name="description" type="text" class="form-control" id="description" placeholder="Description of the product" style="width: 400px;">
+            <input name="description" type="text" class="form-control" id="description" placeholder="Description of the product" style="width: 500px">
           </div>
         </div> <br>
 
         <div class="h5 ms-5"><span class="h5">Colors Available:</span><br>
           <div class="form-group" style="margin: auto; float: left;">
-            <input name="colour" type="text" class="form-control" id="colour" placeholder="Product colour" style="width: 400px;">
+            <input name="colour" type="text" class="form-control" id="colour" placeholder="Product colour" style="width: 500px;">
           </div>
         </div> <br>
           
         <div class="ms-5 mb-3"><span class="h5 ">Quantity Available:</span> <br>
           <div class="form-group" style=" margin: auto; float: left;" style="width: 400px;">
-            <input name="quantity" type="text" class="form-control" id="quantity" placeholder="Quantity available" style="width: 400px;">
+            <input name="quantity" type="text" class="form-control" id="quantity" placeholder="Quantity available" style="width: 500px;">
           </div>
         </div> <br>
           

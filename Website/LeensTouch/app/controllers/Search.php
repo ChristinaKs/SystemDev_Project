@@ -19,7 +19,7 @@
                 $this->view('Search/search', $data1);
             }
 
-            else if(isset($_POST['search']) && $_POST['search_typr'] == "Colour"){
+            else if(isset($_POST['search']) && $_POST['search_type'] == "Colour"){
                 $data = $_POST['search_text'];
                 $isSucc = $this->searchModel->searchByColour($data);
                 $data1 = [

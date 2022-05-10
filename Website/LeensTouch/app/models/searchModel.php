@@ -5,7 +5,7 @@
         }
         public function getResultByName($product_name){
             $this->db->query("SELECT * FROM products
-                                WHERE product_name = :product_name");
+                                WHERE product_name LIKE '%:product_name%'");
             $this->db->bind(':product_name', $product_name);
             return $this->db->getResultSet();
         }
@@ -30,7 +30,7 @@
 
         public function searchByColour($colour){
             $this->db->query("SELECT * FROM products
-                                WHERE colour=:colour");
+                                WHERE colour LIKE LIKE '%:colour%'");
             $this->db->bind('colour', $colour);
             return $this->db->getResultSet();
         }

@@ -25,9 +25,9 @@
   
  }
 .product-card{
-  height: 450px;
-  width: 300px;
-  margin: 10px 60px;
+  height: 420px;
+  width: 270px;
+  margin: 10px 50px;
   display: none;
   animation: blur .8s ease-out ;
   
@@ -46,8 +46,8 @@
 }
 
 .product-thumb {
-  height: 300px;
-  width: 300px;
+  height: 270px;
+  width: 270px;
   margin-bottom: 10px;
   border:1px solid black;
   

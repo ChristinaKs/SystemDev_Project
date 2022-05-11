@@ -1,4 +1,23 @@
 <?php require APPROOT . '/views/includes/header.php';?>
+<?php if (isAdminLoggedIn()) { ?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul style="margin: auto; text-align: center; font-family:'Constantia-Regular';" class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/getProducts">My Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/AdminProducts/createProduct">Create a Product</a>
+        </li>
+        <a class="nav-link" href="/LeensTouch/Orders/getOrders">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/LeensTouch/User/getUsers">My Clients</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<?php } ?>
 
 <style>
  body{
@@ -61,7 +80,7 @@
                          <form method="get" action="/LeensTouch/Product">
                              <input type="hidden" name="product_id" value="'.$product->upc.'">
                               <input type="image" id="image"
-                               src="'.$product->image.'" class="product-thumb" alt="" > 
+                               src="'. URLROOT.'/public/img/' .$product->image.'" class="product-thumb" alt="" > 
                         </form>
                      </div>
                     <div class=" product-info">

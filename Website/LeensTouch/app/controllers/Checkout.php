@@ -51,11 +51,11 @@
         }
 
         foreach($newarray as $item){
-            $isSucc = $this->orderModel->createOrder($_SESSION['user_id'], $item['total_price']+15);
+            $isSucc = $this->orderModel->createOrder($_SESSION['user_id'], $item['total_price'] +15);
         }
 
         foreach($newnewnew as $order){
-            $isSucc = $this->orderModel->createOrderDetails($order['order_id']->order_id , $order['upc'], $order['name'], $order['quantity'], ($order['total_price']+15),
+            $isSucc = $this->orderModel->createOrderDetails($order['order_id']->order_id , $order['upc'], $order['name'], $order['quantity'], ($order['total_price'] * $order['quantity']),
                 $order['custom']['0']['text'], $order['custom']['0']['image']);
         }
          $this->productModel->clearCart();  

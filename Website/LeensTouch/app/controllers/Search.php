@@ -11,7 +11,7 @@
 
         public function getResult(){
             if(isset($_POST['search']) && $_POST['search_type'] == "Name"){
-                $data = $_POST['search_text'];
+                $data = strtolower($_POST['search_text']);
                 $isSucc = $this->searchModel->getResultByName($data);
                 $data1 = [
                     "products" => $isSucc
@@ -20,7 +20,7 @@
             }
 
             else if(isset($_POST['search']) && $_POST['search_type'] == "Colour"){
-                $data = $_POST['search_text'];
+                $data = strtolower($_POST['search_text']);
                 $isSucc = $this->searchModel->searchByColour($data);
                 $data1 = [
                     "products" => $isSucc
@@ -29,7 +29,7 @@
             }
 
             else if(isset($_POST['search']) && $_POST['search_type'] == "available"){
-                $isSucc = $this->searchModel->getAbailable();
+                $isSucc = $this->searchModel->getAvailable();
                 $data1 = [
                     "products" => $isSucc
                 ];

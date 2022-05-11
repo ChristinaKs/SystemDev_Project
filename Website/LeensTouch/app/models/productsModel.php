@@ -17,7 +17,7 @@
         }
 
         public function createProduct($data){
-            $this->db->query("INSERT INTO products (product_name, description, price, colour, quantity, image) values (:product_name, :description, :price, :colour, :quantity, :image)");
+            $this->db->query("INSERT INTO products (product_name, description, price, colour, quantity, image, showit) values (:product_name, :description, :price, :colour, :quantity, :image, '1')");
             $this->db->bind(':product_name', $data['product_name']);
             $this->db->bind(':description', $data['description']);
             $this->db->bind(':price', $data['price']);
@@ -51,8 +51,21 @@
 
         }
 
+        // public function delete($data){
+        //     $this->db->query("DELETE FROM products WHERE upc=:upc");
+        //     $this->db->bind('upc',$data['upc']);
+
+        //     if($this->db->execute()){
+        //         return true;
+        //     }
+        //     else{
+        //         return false;
+        //     }
+
+        // }
+
         public function delete($data){
-            $this->db->query("DELETE FROM products WHERE upc=:upc");
+            $this->db->query("UPDATE products SET showit='0' WHERE upc =:upc");
             $this->db->bind('upc',$data['upc']);
 
             if($this->db->execute()){

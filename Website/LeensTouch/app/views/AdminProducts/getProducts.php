@@ -70,6 +70,7 @@
 <div class="product-container">
   <?php
     foreach($data['products'] as $product){
+      if($product->showit == 1){
       echo '
         <div class="product-card">
           <div class=" product-image"">
@@ -88,7 +89,7 @@
             <a class="mt-2 btn btn-danger" style="float: right;" href="/LeensTouch/AdminProducts/delete/'.$product->upc.'"> Delete</a>
           </div>  
       ';
-    }
+    }}
   ?>   
 </div>
 

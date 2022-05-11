@@ -7,10 +7,9 @@
         public function createOrder($userId, $total){
             $this->db->query("INSERT INTO orders (user_id, status, total_price) VALUES (:user_id, :status , :total_price )");
             $this->db->bind('user_id', $userId);
-            $this->db->bind('status', "shipped");
+            $this->db->bind('status', " ");
             $this->db->bind('total_price', $total);
 
-            
             if($this->db->execute()){
                 return true;
             }
